@@ -1,3 +1,4 @@
+import 'package:countries_app/features/home/presentation/components/my_custom_search.dart';
 import 'package:countries_app/shared/components/custom_bottom_nav.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  TextEditingController searchQuery = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +20,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         backgroundColor: Colors.white,
       ),
-      body: Column(children: []),
+      body: Column(children: [MyCustomSearch(searchQuery: searchQuery)]),
       bottomNavigationBar: customBottomNav(context, 0),
     );
   }
