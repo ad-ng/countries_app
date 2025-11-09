@@ -21,7 +21,7 @@ class _MyCustomSearchState extends State<MyCustomSearch> {
           controller: widget.searchQuery,
           decoration: InputDecoration(
             filled: true,
-            fillColor: Colors.grey[300],
+            fillColor: Colors.grey.shade300,
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
               borderSide: BorderSide(color: Colors.transparent),

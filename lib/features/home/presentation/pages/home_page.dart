@@ -1,6 +1,7 @@
 import 'package:countries_app/features/home/data/datasources/remote/country_api_service.dart';
 import 'package:countries_app/features/home/presentation/components/home_country_card.dart';
 import 'package:countries_app/features/home/presentation/components/my_custom_search.dart';
+import 'package:countries_app/features/home/presentation/components/my_schimmer.dart';
 import 'package:countries_app/shared/components/custom_bottom_nav.dart';
 import 'package:flutter/material.dart';
 
@@ -31,9 +32,7 @@ class _HomePageState extends State<HomePage> {
               future: CountryApiService().fetchAllCountries(),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Center(
-                    child: CircularProgressIndicator(color: Colors.amber),
-                  );
+                  return MyShimmer();
                 }
                 if (snapshot.hasData) {
                   return ListView.builder(
