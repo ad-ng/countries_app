@@ -13,4 +13,10 @@ class CountryRepositoryImpl implements CountryRepository {
     final models = await countryApiService.fetchAllCountries();
     return models.map((m) => m.toEntity()).toList();
   }
+
+  @override
+  Future<List<Country>> searchCountries(searchQuery) async {
+    final models = await countryApiService.searchCountries(searchQuery);
+    return models.map((m) => m.toEntity()).toList();
+  }
 }

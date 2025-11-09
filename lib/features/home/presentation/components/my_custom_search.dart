@@ -1,4 +1,6 @@
+import 'package:countries_app/features/home/presentation/bloc/country_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MyCustomSearch extends StatefulWidget {
   const MyCustomSearch({super.key, required this.searchQuery});
@@ -9,6 +11,15 @@ class MyCustomSearch extends StatefulWidget {
 }
 
 class _MyCustomSearchState extends State<MyCustomSearch> {
+  @override
+  void initState() {
+    super.initState();
+    widget.searchQuery.addListener(() {
+      print(widget.searchQuery.text);
+      BlocProvider.of<CountryCubit>(context).searchCountries('rw');
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(

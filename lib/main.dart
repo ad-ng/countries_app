@@ -3,6 +3,7 @@ import 'package:countries_app/features/favorites/presentation/page/favorite_page
 import 'package:countries_app/features/home/data/datasources/remote/country_api_service.dart';
 import 'package:countries_app/features/home/data/repository/country_repository_impl.dart';
 import 'package:countries_app/features/home/domain/usecases/get_all_countries.dart';
+import 'package:countries_app/features/home/domain/usecases/search_countries_by_name.dart';
 import 'package:countries_app/features/home/presentation/bloc/country_cubit.dart';
 import 'package:countries_app/features/home/presentation/pages/country_page.dart';
 import 'package:countries_app/features/home/presentation/pages/home_page.dart';
@@ -27,7 +28,10 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => CountryCubit(GetAllCountries(countryRepo)),
+          create: (context) => CountryCubit(
+            getAllCountries: GetAllCountries(countryRepo),
+            searchCountriesByName: SearchCountriesByName(countryRepo),
+          ),
         ),
       ],
       child: MaterialApp.router(
