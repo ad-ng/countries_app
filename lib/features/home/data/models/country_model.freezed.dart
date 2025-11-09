@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$CountryModel {
 
- Name get name; Flags get flags; List<String>? get capital; String get region; String? get subregion; double? get area; List<String>? get timezones; int? get population;
+ Name get name; Flags get flags; List<String>? get capital; String? get region; String? get subregion; double? get area; List<String>? get timezones; int? get population;
 /// Create a copy of CountryModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $CountryModelCopyWith<$Res>  {
   factory $CountryModelCopyWith(CountryModel value, $Res Function(CountryModel) _then) = _$CountryModelCopyWithImpl;
 @useResult
 $Res call({
- Name name, Flags flags, List<String>? capital, String region, String? subregion, double? area, List<String>? timezones, int? population
+ Name name, Flags flags, List<String>? capital, String? region, String? subregion, double? area, List<String>? timezones, int? population
 });
 
 
@@ -65,13 +65,13 @@ class _$CountryModelCopyWithImpl<$Res>
 
 /// Create a copy of CountryModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? flags = null,Object? capital = freezed,Object? region = null,Object? subregion = freezed,Object? area = freezed,Object? timezones = freezed,Object? population = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? flags = null,Object? capital = freezed,Object? region = freezed,Object? subregion = freezed,Object? area = freezed,Object? timezones = freezed,Object? population = freezed,}) {
   return _then(_self.copyWith(
 name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as Name,flags: null == flags ? _self.flags : flags // ignore: cast_nullable_to_non_nullable
 as Flags,capital: freezed == capital ? _self.capital : capital // ignore: cast_nullable_to_non_nullable
-as List<String>?,region: null == region ? _self.region : region // ignore: cast_nullable_to_non_nullable
-as String,subregion: freezed == subregion ? _self.subregion : subregion // ignore: cast_nullable_to_non_nullable
+as List<String>?,region: freezed == region ? _self.region : region // ignore: cast_nullable_to_non_nullable
+as String?,subregion: freezed == subregion ? _self.subregion : subregion // ignore: cast_nullable_to_non_nullable
 as String?,area: freezed == area ? _self.area : area // ignore: cast_nullable_to_non_nullable
 as double?,timezones: freezed == timezones ? _self.timezones : timezones // ignore: cast_nullable_to_non_nullable
 as List<String>?,population: freezed == population ? _self.population : population // ignore: cast_nullable_to_non_nullable
@@ -140,10 +140,7 @@ return $default(_that);case _:
 final _that = this;
 switch (_that) {
 case _CountryModel():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
+return $default(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -178,7 +175,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( Name name,  Flags flags,  List<String>? capital,  String region,  String? subregion,  double? area,  List<String>? timezones,  int? population)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( Name name,  Flags flags,  List<String>? capital,  String? region,  String? subregion,  double? area,  List<String>? timezones,  int? population)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CountryModel() when $default != null:
 return $default(_that.name,_that.flags,_that.capital,_that.region,_that.subregion,_that.area,_that.timezones,_that.population);case _:
@@ -199,13 +196,10 @@ return $default(_that.name,_that.flags,_that.capital,_that.region,_that.subregio
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( Name name,  Flags flags,  List<String>? capital,  String region,  String? subregion,  double? area,  List<String>? timezones,  int? population)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( Name name,  Flags flags,  List<String>? capital,  String? region,  String? subregion,  double? area,  List<String>? timezones,  int? population)  $default,) {final _that = this;
 switch (_that) {
 case _CountryModel():
-return $default(_that.name,_that.flags,_that.capital,_that.region,_that.subregion,_that.area,_that.timezones,_that.population);case _:
-  throw StateError('Unexpected subclass');
-
-}
+return $default(_that.name,_that.flags,_that.capital,_that.region,_that.subregion,_that.area,_that.timezones,_that.population);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -219,7 +213,7 @@ return $default(_that.name,_that.flags,_that.capital,_that.region,_that.subregio
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( Name name,  Flags flags,  List<String>? capital,  String region,  String? subregion,  double? area,  List<String>? timezones,  int? population)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( Name name,  Flags flags,  List<String>? capital,  String? region,  String? subregion,  double? area,  List<String>? timezones,  int? population)?  $default,) {final _that = this;
 switch (_that) {
 case _CountryModel() when $default != null:
 return $default(_that.name,_that.flags,_that.capital,_that.region,_that.subregion,_that.area,_that.timezones,_that.population);case _:
@@ -234,7 +228,7 @@ return $default(_that.name,_that.flags,_that.capital,_that.region,_that.subregio
 @JsonSerializable()
 
 class _CountryModel implements CountryModel {
-  const _CountryModel({required this.name, required this.flags, final  List<String>? capital, required this.region, this.subregion, this.area, final  List<String>? timezones, this.population}): _capital = capital,_timezones = timezones;
+  const _CountryModel({required this.name, required this.flags, final  List<String>? capital, this.region, this.subregion, this.area, final  List<String>? timezones, this.population}): _capital = capital,_timezones = timezones;
   factory _CountryModel.fromJson(Map<String, dynamic> json) => _$CountryModelFromJson(json);
 
 @override final  Name name;
@@ -248,7 +242,7 @@ class _CountryModel implements CountryModel {
   return EqualUnmodifiableListView(value);
 }
 
-@override final  String region;
+@override final  String? region;
 @override final  String? subregion;
 @override final  double? area;
  final  List<String>? _timezones;
@@ -295,7 +289,7 @@ abstract mixin class _$CountryModelCopyWith<$Res> implements $CountryModelCopyWi
   factory _$CountryModelCopyWith(_CountryModel value, $Res Function(_CountryModel) _then) = __$CountryModelCopyWithImpl;
 @override @useResult
 $Res call({
- Name name, Flags flags, List<String>? capital, String region, String? subregion, double? area, List<String>? timezones, int? population
+ Name name, Flags flags, List<String>? capital, String? region, String? subregion, double? area, List<String>? timezones, int? population
 });
 
 
@@ -312,13 +306,13 @@ class __$CountryModelCopyWithImpl<$Res>
 
 /// Create a copy of CountryModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? flags = null,Object? capital = freezed,Object? region = null,Object? subregion = freezed,Object? area = freezed,Object? timezones = freezed,Object? population = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? flags = null,Object? capital = freezed,Object? region = freezed,Object? subregion = freezed,Object? area = freezed,Object? timezones = freezed,Object? population = freezed,}) {
   return _then(_CountryModel(
 name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as Name,flags: null == flags ? _self.flags : flags // ignore: cast_nullable_to_non_nullable
 as Flags,capital: freezed == capital ? _self._capital : capital // ignore: cast_nullable_to_non_nullable
-as List<String>?,region: null == region ? _self.region : region // ignore: cast_nullable_to_non_nullable
-as String,subregion: freezed == subregion ? _self.subregion : subregion // ignore: cast_nullable_to_non_nullable
+as List<String>?,region: freezed == region ? _self.region : region // ignore: cast_nullable_to_non_nullable
+as String?,subregion: freezed == subregion ? _self.subregion : subregion // ignore: cast_nullable_to_non_nullable
 as String?,area: freezed == area ? _self.area : area // ignore: cast_nullable_to_non_nullable
 as double?,timezones: freezed == timezones ? _self._timezones : timezones // ignore: cast_nullable_to_non_nullable
 as List<String>?,population: freezed == population ? _self.population : population // ignore: cast_nullable_to_non_nullable
@@ -351,7 +345,7 @@ $FlagsCopyWith<$Res> get flags {
 /// @nodoc
 mixin _$Name {
 
- String get common;
+ String? get common;
 /// Create a copy of Name
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -384,7 +378,7 @@ abstract mixin class $NameCopyWith<$Res>  {
   factory $NameCopyWith(Name value, $Res Function(Name) _then) = _$NameCopyWithImpl;
 @useResult
 $Res call({
- String common
+ String? common
 });
 
 
@@ -401,10 +395,10 @@ class _$NameCopyWithImpl<$Res>
 
 /// Create a copy of Name
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? common = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? common = freezed,}) {
   return _then(_self.copyWith(
-common: null == common ? _self.common : common // ignore: cast_nullable_to_non_nullable
-as String,
+common: freezed == common ? _self.common : common // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
@@ -451,10 +445,7 @@ return $default(_that);case _:
 final _that = this;
 switch (_that) {
 case _Name():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
+return $default(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -489,7 +480,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String common)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? common)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Name() when $default != null:
 return $default(_that.common);case _:
@@ -510,13 +501,10 @@ return $default(_that.common);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String common)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? common)  $default,) {final _that = this;
 switch (_that) {
 case _Name():
-return $default(_that.common);case _:
-  throw StateError('Unexpected subclass');
-
-}
+return $default(_that.common);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -530,7 +518,7 @@ return $default(_that.common);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String common)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? common)?  $default,) {final _that = this;
 switch (_that) {
 case _Name() when $default != null:
 return $default(_that.common);case _:
@@ -545,10 +533,10 @@ return $default(_that.common);case _:
 @JsonSerializable()
 
 class _Name implements Name {
-  const _Name({required this.common});
+  const _Name({this.common});
   factory _Name.fromJson(Map<String, dynamic> json) => _$NameFromJson(json);
 
-@override final  String common;
+@override final  String? common;
 
 /// Create a copy of Name
 /// with the given fields replaced by the non-null parameter values.
@@ -583,7 +571,7 @@ abstract mixin class _$NameCopyWith<$Res> implements $NameCopyWith<$Res> {
   factory _$NameCopyWith(_Name value, $Res Function(_Name) _then) = __$NameCopyWithImpl;
 @override @useResult
 $Res call({
- String common
+ String? common
 });
 
 
@@ -600,10 +588,10 @@ class __$NameCopyWithImpl<$Res>
 
 /// Create a copy of Name
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? common = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? common = freezed,}) {
   return _then(_Name(
-common: null == common ? _self.common : common // ignore: cast_nullable_to_non_nullable
-as String,
+common: freezed == common ? _self.common : common // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
@@ -614,7 +602,7 @@ as String,
 /// @nodoc
 mixin _$Flags {
 
- String get png; String get svg;
+ String? get png; String? get svg;
 /// Create a copy of Flags
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -647,7 +635,7 @@ abstract mixin class $FlagsCopyWith<$Res>  {
   factory $FlagsCopyWith(Flags value, $Res Function(Flags) _then) = _$FlagsCopyWithImpl;
 @useResult
 $Res call({
- String png, String svg
+ String? png, String? svg
 });
 
 
@@ -664,11 +652,11 @@ class _$FlagsCopyWithImpl<$Res>
 
 /// Create a copy of Flags
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? png = null,Object? svg = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? png = freezed,Object? svg = freezed,}) {
   return _then(_self.copyWith(
-png: null == png ? _self.png : png // ignore: cast_nullable_to_non_nullable
-as String,svg: null == svg ? _self.svg : svg // ignore: cast_nullable_to_non_nullable
-as String,
+png: freezed == png ? _self.png : png // ignore: cast_nullable_to_non_nullable
+as String?,svg: freezed == svg ? _self.svg : svg // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
@@ -715,10 +703,7 @@ return $default(_that);case _:
 final _that = this;
 switch (_that) {
 case _Flags():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
+return $default(_that);}
 }
 /// A variant of `map` that fallback to returning `null`.
 ///
@@ -753,7 +738,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String png,  String svg)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? png,  String? svg)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Flags() when $default != null:
 return $default(_that.png,_that.svg);case _:
@@ -774,13 +759,10 @@ return $default(_that.png,_that.svg);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String png,  String svg)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? png,  String? svg)  $default,) {final _that = this;
 switch (_that) {
 case _Flags():
-return $default(_that.png,_that.svg);case _:
-  throw StateError('Unexpected subclass');
-
-}
+return $default(_that.png,_that.svg);}
 }
 /// A variant of `when` that fallback to returning `null`
 ///
@@ -794,7 +776,7 @@ return $default(_that.png,_that.svg);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String png,  String svg)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? png,  String? svg)?  $default,) {final _that = this;
 switch (_that) {
 case _Flags() when $default != null:
 return $default(_that.png,_that.svg);case _:
@@ -809,11 +791,11 @@ return $default(_that.png,_that.svg);case _:
 @JsonSerializable()
 
 class _Flags implements Flags {
-  const _Flags({required this.png, required this.svg});
+  const _Flags({this.png, this.svg});
   factory _Flags.fromJson(Map<String, dynamic> json) => _$FlagsFromJson(json);
 
-@override final  String png;
-@override final  String svg;
+@override final  String? png;
+@override final  String? svg;
 
 /// Create a copy of Flags
 /// with the given fields replaced by the non-null parameter values.
@@ -848,7 +830,7 @@ abstract mixin class _$FlagsCopyWith<$Res> implements $FlagsCopyWith<$Res> {
   factory _$FlagsCopyWith(_Flags value, $Res Function(_Flags) _then) = __$FlagsCopyWithImpl;
 @override @useResult
 $Res call({
- String png, String svg
+ String? png, String? svg
 });
 
 
@@ -865,11 +847,11 @@ class __$FlagsCopyWithImpl<$Res>
 
 /// Create a copy of Flags
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? png = null,Object? svg = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? png = freezed,Object? svg = freezed,}) {
   return _then(_Flags(
-png: null == png ? _self.png : png // ignore: cast_nullable_to_non_nullable
-as String,svg: null == svg ? _self.svg : svg // ignore: cast_nullable_to_non_nullable
-as String,
+png: freezed == png ? _self.png : png // ignore: cast_nullable_to_non_nullable
+as String?,svg: freezed == svg ? _self.svg : svg // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 

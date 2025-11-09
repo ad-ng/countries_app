@@ -13,7 +13,7 @@ _CountryModel _$CountryModelFromJson(Map<String, dynamic> json) =>
       capital: (json['capital'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-      region: json['region'] as String,
+      region: json['region'] as String?,
       subregion: json['subregion'] as String?,
       area: (json['area'] as num?)?.toDouble(),
       timezones: (json['timezones'] as List<dynamic>?)
@@ -35,14 +35,14 @@ Map<String, dynamic> _$CountryModelToJson(_CountryModel instance) =>
     };
 
 _Name _$NameFromJson(Map<String, dynamic> json) =>
-    _Name(common: json['common'] as String);
+    _Name(common: json['common'] as String?);
 
 Map<String, dynamic> _$NameToJson(_Name instance) => <String, dynamic>{
   'common': instance.common,
 };
 
 _Flags _$FlagsFromJson(Map<String, dynamic> json) =>
-    _Flags(png: json['png'] as String, svg: json['svg'] as String);
+    _Flags(png: json['png'] as String?, svg: json['svg'] as String?);
 
 Map<String, dynamic> _$FlagsToJson(_Flags instance) => <String, dynamic>{
   'png': instance.png,

@@ -3,13 +3,13 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'country_model.freezed.dart';
 part 'country_model.g.dart';
 
-@freezed
-class CountryModel with _$CountryModel {
+@Freezed()
+sealed class CountryModel with _$CountryModel {
   const factory CountryModel({
     required Name name,
     required Flags flags,
     List<String>? capital,
-    required String region,
+    String? region,
     String? subregion,
     double? area,
     List<String>? timezones,
@@ -20,16 +20,16 @@ class CountryModel with _$CountryModel {
       _$CountryModelFromJson(json);
 }
 
-@freezed
-class Name with _$Name {
-  const factory Name({required String common}) = _Name;
+@Freezed()
+sealed class Name with _$Name {
+  const factory Name({String? common}) = _Name;
 
   factory Name.fromJson(Map<String, dynamic> json) => _$NameFromJson(json);
 }
 
-@freezed
-class Flags with _$Flags {
-  const factory Flags({required String png, required String svg}) = _Flags;
+@Freezed()
+sealed class Flags with _$Flags {
+  const factory Flags({String? png, String? svg}) = _Flags;
 
   factory Flags.fromJson(Map<String, dynamic> json) => _$FlagsFromJson(json);
 }

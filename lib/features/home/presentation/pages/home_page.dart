@@ -1,3 +1,4 @@
+import 'package:countries_app/features/home/data/datasources/remote/country_api_service.dart';
 import 'package:countries_app/features/home/presentation/components/my_custom_search.dart';
 import 'package:countries_app/shared/components/custom_bottom_nav.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,37 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         backgroundColor: Colors.white,
       ),
-      body: Column(children: [MyCustomSearch(searchQuery: searchQuery)]),
+      body: Column(
+        children: [
+          MyCustomSearch(searchQuery: searchQuery),
+          SizedBox(
+            height: 500,
+            width: 500,
+            child: FutureBuilder(
+              future: CountryApiService().fetchAllCountries(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return Center(
+                    child: CircularProgressIndicator(color: Colors.amber),
+                  );
+                }
+                if (snapshot.hasData) {
+                  return ListView.builder(
+                    itemCount: snapshot.data!.length,
+                    itemBuilder: (context, index) => ListTile(
+                      title: Text(snapshot.data![index].name.common!),
+                    ),
+                  );
+                }
+                if (snapshot.hasError) {
+                  return Center(child: Text(snapshot.error.toString()));
+                }
+                return SizedBox();
+              },
+            ),
+          ),
+        ],
+      ),
       bottomNavigationBar: customBottomNav(context, 0),
     );
   }
