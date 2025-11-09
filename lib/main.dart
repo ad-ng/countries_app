@@ -1,6 +1,9 @@
+import 'package:countries_app/core/dio_service.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  DioService.instance.setup();
   runApp(const MyApp());
 }
 
