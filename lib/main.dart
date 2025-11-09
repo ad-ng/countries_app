@@ -1,8 +1,13 @@
 import 'package:countries_app/core/dio_service.dart';
 import 'package:countries_app/features/favorites/presentation/page/favorite_page.dart';
+import 'package:countries_app/features/home/data/datasources/remote/country_api_service.dart';
+import 'package:countries_app/features/home/data/repository/country_repository_impl.dart';
+import 'package:countries_app/features/home/domain/usecases/get_all_countries.dart';
+import 'package:countries_app/features/home/presentation/bloc/country_cubit.dart';
 import 'package:countries_app/features/home/presentation/pages/country_page.dart';
 import 'package:countries_app/features/home/presentation/pages/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 void main() {
@@ -17,11 +22,20 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Countries App',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.black)),
-      routerConfig: routes,
+    final countryRepo = CountryRepositoryImpl(CountryApiService());
+
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => CountryCubit(GetAllCountries(countryRepo)),
+        ),
+      ],
+      child: MaterialApp.router(
+        title: 'Countries App',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.black)),
+        routerConfig: routes,
+      ),
     );
   }
 }

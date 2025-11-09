@@ -1,9 +1,10 @@
-import 'package:countries_app/features/home/data/datasources/remote/country_api_service.dart';
+import 'package:countries_app/features/home/presentation/bloc/country_cubit.dart';
 import 'package:countries_app/features/home/presentation/components/home_country_card.dart';
 import 'package:countries_app/features/home/presentation/components/my_custom_search.dart';
 import 'package:countries_app/features/home/presentation/components/my_schimmer.dart';
 import 'package:countries_app/shared/components/custom_bottom_nav.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,6 +15,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   TextEditingController searchQuery = TextEditingController();
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    context.read<CountryCubit>().loadCountries();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,23 +36,17 @@ class _HomePageState extends State<HomePage> {
           MyCustomSearch(searchQuery: searchQuery),
           SizedBox(height: 10),
           Expanded(
-            child: FutureBuilder(
-              future: CountryApiService().fetchAllCountries(),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return MyShimmer();
-                }
-                if (snapshot.hasData) {
-                  return ListView.builder(
-                    itemCount: snapshot.data!.length,
+            child: BlocBuilder<CountryCubit, CountryState>(
+              builder: (context, state) {
+                return state.when(
+                  loading: () => MyShimmer(),
+                  success: (countries) => ListView.builder(
+                    itemCount: countries.length,
                     itemBuilder: (context, index) =>
-                        homeCountryCard(context, snapshot.data![index]),
-                  );
-                }
-                if (snapshot.hasError) {
-                  return Center(child: Text(snapshot.error.toString()));
-                }
-                return SizedBox();
+                        homeCountryCard(context, countries[index]),
+                  ),
+                  error: (msg) => Text(msg),
+                );
               },
             ),
           ),
