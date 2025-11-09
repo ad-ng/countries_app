@@ -1,3 +1,4 @@
+import 'package:countries_app/features/home/domain/entity/country.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'country_model.freezed.dart';
@@ -32,4 +33,17 @@ sealed class Flags with _$Flags {
   const factory Flags({String? png, String? svg}) = _Flags;
 
   factory Flags.fromJson(Map<String, dynamic> json) => _$FlagsFromJson(json);
+}
+
+extension CountryMapper on CountryModel {
+  Country toEntity() => Country(
+    commonName: name.common!,
+    flagPng: flags.png!,
+    capital: capital,
+    region: region,
+    subregion: subregion,
+    area: area,
+    timezones: timezones,
+    population: population!,
+  );
 }
