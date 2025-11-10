@@ -1,7 +1,7 @@
 import 'package:countries_app/core/dio_service.dart';
 import 'package:countries_app/features/favorites/presentation/page/favorite_page.dart';
 import 'package:countries_app/features/home/data/datasources/remote/country_api_service.dart';
-import 'package:countries_app/features/home/data/models/country_hive_model.dart';
+import 'package:countries_app/features/favorites/data/models/country_hive_model.dart';
 import 'package:countries_app/features/home/data/repository/country_repository_impl.dart';
 import 'package:countries_app/features/home/domain/usecases/get_all_countries.dart';
 import 'package:countries_app/features/home/domain/usecases/search_countries_by_name.dart';
