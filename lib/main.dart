@@ -1,4 +1,7 @@
 import 'package:countries_app/core/dio_service.dart';
+import 'package:countries_app/features/favorites/data/datasource/local/favorite_local_service.dart';
+import 'package:countries_app/features/favorites/data/repository/favorite_repository_impl.dart';
+import 'package:countries_app/features/favorites/presentation/cubit/favorites_cubit.dart';
 import 'package:countries_app/features/favorites/presentation/page/favorite_page.dart';
 import 'package:countries_app/features/home/data/datasources/remote/country_api_service.dart';
 import 'package:countries_app/features/favorites/data/models/country_hive_model.dart';
@@ -41,6 +44,10 @@ class MyApp extends StatelessWidget {
             getAllCountries: GetAllCountries(countryRepo),
             searchCountriesByName: SearchCountriesByName(countryRepo),
           ),
+        ),
+        BlocProvider(
+          create: (context) =>
+              FavoritesCubit(FavoriteRepositoryImpl(FavoriteLocalService())),
         ),
       ],
       child: MaterialApp.router(
