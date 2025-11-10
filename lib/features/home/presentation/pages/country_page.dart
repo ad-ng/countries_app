@@ -1,6 +1,7 @@
-import 'package:countries_app/features/home/data/datasources/remote/country_api_service.dart';
 import 'package:countries_app/features/home/domain/usecases/number_formatter.dart';
+import 'package:countries_app/features/home/presentation/bloc/single_country_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
 class CountryPage extends StatefulWidget {
@@ -14,6 +15,13 @@ class CountryPage extends StatefulWidget {
 
 class _CountryPageState extends State<CountryPage> {
   final formatter = NumberFormat('#,###');
+
+  @override
+  void initState() {
+    super.initState();
+    context.read<SingleCountryCubit>().fetchOneCountry(widget.cca2);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,14 +34,11 @@ class _CountryPageState extends State<CountryPage> {
         backgroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
-        child: FutureBuilder(
-          future: CountryApiService().fetchOneCountryByCca2(widget.cca2),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(child: CircularProgressIndicator());
-            }
-            if (snapshot.hasData) {
-              return Column(
+        child: BlocBuilder<SingleCountryCubit, SingleCountryState>(
+          builder: (context, state) {
+            return state.when(
+              loading: () => Center(child: CircularProgressIndicator()),
+              success: (country) => Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
@@ -42,9 +47,9 @@ class _CountryPageState extends State<CountryPage> {
                     child: ClipRRect(
                       borderRadius: BorderRadiusGeometry.circular(8),
                       child: Hero(
-                        tag: snapshot.data!.name.common!,
+                        tag: country.commonName,
                         child: Image.network(
-                          snapshot.data!.flags.png!,
+                          country.flagPng,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -67,19 +72,15 @@ class _CountryPageState extends State<CountryPage> {
                   eachStatistic(
                     context,
                     'Area',
-                    '${formatter.format(snapshot.data!.area!)} sq km',
+                    '${formatter.format(country.area!)} sq km',
                   ),
                   eachStatistic(
                     context,
                     'Population',
-                    customNumberFormatFull(snapshot.data!.population!),
+                    customNumberFormatFull(country.population),
                   ),
-                  eachStatistic(context, 'Region', snapshot.data!.region!),
-                  eachStatistic(
-                    context,
-                    'Sub Region',
-                    snapshot.data!.subregion!,
-                  ),
+                  eachStatistic(context, 'Region', country.region!),
+                  eachStatistic(context, 'Sub Region', country.subregion!),
                   Padding(
                     padding: const EdgeInsets.only(
                       top: 30,
@@ -97,7 +98,7 @@ class _CountryPageState extends State<CountryPage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Wrap(
-                      children: snapshot.data!.timezones!
+                      children: country.timezones!
                           .map(
                             (e) => Container(
                               padding: EdgeInsets.symmetric(
@@ -122,12 +123,19 @@ class _CountryPageState extends State<CountryPage> {
                     ),
                   ),
                 ],
-              );
-            }
-            if (snapshot.hasError) {
-              return Center(child: Text(snapshot.error.toString()));
-            }
-            return SizedBox();
+              ),
+              error: (message) => Column(
+                children: [
+                  Center(child: Text(message)),
+                  TextButton(
+                    onPressed: () => context
+                        .read<SingleCountryCubit>()
+                        .fetchOneCountry(widget.cca2),
+                    child: Text('Retry'),
+                  ),
+                ],
+              ),
+            );
           },
         ),
       ),
