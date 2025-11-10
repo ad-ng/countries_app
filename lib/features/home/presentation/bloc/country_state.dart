@@ -6,3 +6,5 @@ sealed class CountryState with _$CountryState {
   const factory CountryState.success(List<Country> countries) = _Success;
   const factory CountryState.error(String message) = _Error;
 }
+
+

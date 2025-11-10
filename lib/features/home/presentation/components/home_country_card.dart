@@ -28,21 +28,24 @@ Widget homeCountryCard(BuildContext context, Country currentCountry) {
       'Population: ${customNumberFormat(currentCountry.population)} ',
       style: TextStyle(fontSize: 16, color: Colors.grey),
     ),
-    trailing: IconButton(
-      icon: Icon(
-        context.read<FavoritesCubit>().isFavorite(currentCountry.cca2!)
-            ? Icons.favorite
-            : Icons.favorite_border,
-        color: Colors.black,
-      ),
-      onPressed: () {
-        context.read<FavoritesCubit>().toggleFavorite(
-          CountryHiveModel(
-            cca2: currentCountry.cca2!,
-            commonName: currentCountry.commonName,
-            flagPng: currentCountry.flagPng,
-            capital: currentCountry.capital?[0] ?? 'Not Added',
+    trailing: BlocBuilder<FavoritesCubit, List<CountryHiveModel>>(
+      builder: (context, favorites) {
+        final isFav = favorites.any((e) => e.cca2 == currentCountry.cca2);
+        return IconButton(
+          icon: Icon(
+            isFav ? Icons.favorite : Icons.favorite_border,
+            color: Colors.black,
           ),
+          onPressed: () {
+            context.read<FavoritesCubit>().toggleFavorite(
+              CountryHiveModel(
+                cca2: currentCountry.cca2!,
+                commonName: currentCountry.commonName,
+                flagPng: currentCountry.flagPng,
+                capital: currentCountry.capital?[0] ?? 'Not Added',
+              ),
+            );
+          },
         );
       },
     ),
