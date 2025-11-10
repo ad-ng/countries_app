@@ -14,9 +14,15 @@ class _MyCustomSearchState extends State<MyCustomSearch> {
   @override
   void initState() {
     super.initState();
+
     widget.searchQuery.addListener(() {
-      print(widget.searchQuery.text);
-      BlocProvider.of<CountryCubit>(context).searchCountries('rw');
+      final query = widget.searchQuery.text.trim();
+
+      if (query.isEmpty) {
+        BlocProvider.of<CountryCubit>(context).loadCountries();
+      } else {
+        BlocProvider.of<CountryCubit>(context).searchCountries(query);
+      }
     });
   }
 
@@ -48,7 +54,9 @@ class _MyCustomSearchState extends State<MyCustomSearch> {
             ),
             isDense: true,
             suffixIcon: IconButton(
-              onPressed: () => widget.searchQuery.clear(),
+              onPressed: () {
+                widget.searchQuery.clear();
+              },
               icon: Icon(Icons.cancel),
             ),
           ),
