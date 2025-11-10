@@ -19,7 +19,7 @@ _CountryModel _$CountryModelFromJson(Map<String, dynamic> json) =>
       timezones: (json['timezones'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
-      cca2: json['cca2'] as String,
+      cca2: json['cca2'] as String?,
       population: (json['population'] as num?)?.toInt(),
     );
 

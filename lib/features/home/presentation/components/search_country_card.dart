@@ -21,7 +21,10 @@ Widget searchCountryCard(BuildContext context, Country currentCountry) {
       ),
       onTap: () => context.pushNamed(
         'countryPage',
-        extra: CountryPage(name: currentCountry.commonName, cca2: "cc2 test"),
+        extra: CountryPage(
+          name: currentCountry.commonName,
+          cca2: currentCountry.cca2!,
+        ),
       ),
     ),
   );

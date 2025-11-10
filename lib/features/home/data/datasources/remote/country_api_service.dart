@@ -48,4 +48,28 @@ class CountryApiService {
       throw Exception('Something went wrong: $e');
     }
   }
+
+  Future<CountryModel> fetchOneCountryByCca2(String cca2) async {
+    try {
+      final response = await _dio.get(
+        '/v3.1/alpha/$cca2?fields=name,flags,population,capital,region,subregion,area,timezones',
+      );
+
+      final dataJson = response.data;
+
+      if (dataJson == null) {
+        throw Exception('No data returned');
+      }
+
+      if (dataJson is Map<String, dynamic>) {
+        return CountryModel.fromJson(dataJson);
+      }
+
+      throw Exception('Unexpected data format: ${dataJson.runtimeType}');
+    } on DioException catch (e) {
+      throw Exception('Something went wrong: $e');
+    } catch (e) {
+      throw Exception('Something went wrong: $e');
+    }
+  }
 }

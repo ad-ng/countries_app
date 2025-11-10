@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$CountryModel {
 
- Name get name; Flags get flags; List<String>? get capital; String? get region; String? get subregion; double? get area; List<String>? get timezones; String get cca2; int? get population;
+ Name get name; Flags get flags; List<String>? get capital; String? get region; String? get subregion; double? get area; List<String>? get timezones; String? get cca2; int? get population;
 /// Create a copy of CountryModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $CountryModelCopyWith<$Res>  {
   factory $CountryModelCopyWith(CountryModel value, $Res Function(CountryModel) _then) = _$CountryModelCopyWithImpl;
 @useResult
 $Res call({
- Name name, Flags flags, List<String>? capital, String? region, String? subregion, double? area, List<String>? timezones, String cca2, int? population
+ Name name, Flags flags, List<String>? capital, String? region, String? subregion, double? area, List<String>? timezones, String? cca2, int? population
 });
 
 
@@ -65,7 +65,7 @@ class _$CountryModelCopyWithImpl<$Res>
 
 /// Create a copy of CountryModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? flags = null,Object? capital = freezed,Object? region = freezed,Object? subregion = freezed,Object? area = freezed,Object? timezones = freezed,Object? cca2 = null,Object? population = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? flags = null,Object? capital = freezed,Object? region = freezed,Object? subregion = freezed,Object? area = freezed,Object? timezones = freezed,Object? cca2 = freezed,Object? population = freezed,}) {
   return _then(_self.copyWith(
 name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as Name,flags: null == flags ? _self.flags : flags // ignore: cast_nullable_to_non_nullable
@@ -74,8 +74,8 @@ as List<String>?,region: freezed == region ? _self.region : region // ignore: ca
 as String?,subregion: freezed == subregion ? _self.subregion : subregion // ignore: cast_nullable_to_non_nullable
 as String?,area: freezed == area ? _self.area : area // ignore: cast_nullable_to_non_nullable
 as double?,timezones: freezed == timezones ? _self.timezones : timezones // ignore: cast_nullable_to_non_nullable
-as List<String>?,cca2: null == cca2 ? _self.cca2 : cca2 // ignore: cast_nullable_to_non_nullable
-as String,population: freezed == population ? _self.population : population // ignore: cast_nullable_to_non_nullable
+as List<String>?,cca2: freezed == cca2 ? _self.cca2 : cca2 // ignore: cast_nullable_to_non_nullable
+as String?,population: freezed == population ? _self.population : population // ignore: cast_nullable_to_non_nullable
 as int?,
   ));
 }
@@ -176,7 +176,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( Name name,  Flags flags,  List<String>? capital,  String? region,  String? subregion,  double? area,  List<String>? timezones,  String cca2,  int? population)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( Name name,  Flags flags,  List<String>? capital,  String? region,  String? subregion,  double? area,  List<String>? timezones,  String? cca2,  int? population)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CountryModel() when $default != null:
 return $default(_that.name,_that.flags,_that.capital,_that.region,_that.subregion,_that.area,_that.timezones,_that.cca2,_that.population);case _:
@@ -197,7 +197,7 @@ return $default(_that.name,_that.flags,_that.capital,_that.region,_that.subregio
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( Name name,  Flags flags,  List<String>? capital,  String? region,  String? subregion,  double? area,  List<String>? timezones,  String cca2,  int? population)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( Name name,  Flags flags,  List<String>? capital,  String? region,  String? subregion,  double? area,  List<String>? timezones,  String? cca2,  int? population)  $default,) {final _that = this;
 switch (_that) {
 case _CountryModel():
 return $default(_that.name,_that.flags,_that.capital,_that.region,_that.subregion,_that.area,_that.timezones,_that.cca2,_that.population);}
@@ -214,7 +214,7 @@ return $default(_that.name,_that.flags,_that.capital,_that.region,_that.subregio
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( Name name,  Flags flags,  List<String>? capital,  String? region,  String? subregion,  double? area,  List<String>? timezones,  String cca2,  int? population)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( Name name,  Flags flags,  List<String>? capital,  String? region,  String? subregion,  double? area,  List<String>? timezones,  String? cca2,  int? population)?  $default,) {final _that = this;
 switch (_that) {
 case _CountryModel() when $default != null:
 return $default(_that.name,_that.flags,_that.capital,_that.region,_that.subregion,_that.area,_that.timezones,_that.cca2,_that.population);case _:
@@ -229,7 +229,7 @@ return $default(_that.name,_that.flags,_that.capital,_that.region,_that.subregio
 @JsonSerializable()
 
 class _CountryModel implements CountryModel {
-  const _CountryModel({required this.name, required this.flags, final  List<String>? capital, this.region, this.subregion, this.area, final  List<String>? timezones, required this.cca2, this.population}): _capital = capital,_timezones = timezones;
+  const _CountryModel({required this.name, required this.flags, final  List<String>? capital, this.region, this.subregion, this.area, final  List<String>? timezones, this.cca2, this.population}): _capital = capital,_timezones = timezones;
   factory _CountryModel.fromJson(Map<String, dynamic> json) => _$CountryModelFromJson(json);
 
 @override final  Name name;
@@ -255,7 +255,7 @@ class _CountryModel implements CountryModel {
   return EqualUnmodifiableListView(value);
 }
 
-@override final  String cca2;
+@override final  String? cca2;
 @override final  int? population;
 
 /// Create a copy of CountryModel
@@ -291,7 +291,7 @@ abstract mixin class _$CountryModelCopyWith<$Res> implements $CountryModelCopyWi
   factory _$CountryModelCopyWith(_CountryModel value, $Res Function(_CountryModel) _then) = __$CountryModelCopyWithImpl;
 @override @useResult
 $Res call({
- Name name, Flags flags, List<String>? capital, String? region, String? subregion, double? area, List<String>? timezones, String cca2, int? population
+ Name name, Flags flags, List<String>? capital, String? region, String? subregion, double? area, List<String>? timezones, String? cca2, int? population
 });
 
 
@@ -308,7 +308,7 @@ class __$CountryModelCopyWithImpl<$Res>
 
 /// Create a copy of CountryModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? flags = null,Object? capital = freezed,Object? region = freezed,Object? subregion = freezed,Object? area = freezed,Object? timezones = freezed,Object? cca2 = null,Object? population = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? flags = null,Object? capital = freezed,Object? region = freezed,Object? subregion = freezed,Object? area = freezed,Object? timezones = freezed,Object? cca2 = freezed,Object? population = freezed,}) {
   return _then(_CountryModel(
 name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as Name,flags: null == flags ? _self.flags : flags // ignore: cast_nullable_to_non_nullable
@@ -317,8 +317,8 @@ as List<String>?,region: freezed == region ? _self.region : region // ignore: ca
 as String?,subregion: freezed == subregion ? _self.subregion : subregion // ignore: cast_nullable_to_non_nullable
 as String?,area: freezed == area ? _self.area : area // ignore: cast_nullable_to_non_nullable
 as double?,timezones: freezed == timezones ? _self._timezones : timezones // ignore: cast_nullable_to_non_nullable
-as List<String>?,cca2: null == cca2 ? _self.cca2 : cca2 // ignore: cast_nullable_to_non_nullable
-as String,population: freezed == population ? _self.population : population // ignore: cast_nullable_to_non_nullable
+as List<String>?,cca2: freezed == cca2 ? _self.cca2 : cca2 // ignore: cast_nullable_to_non_nullable
+as String?,population: freezed == population ? _self.population : population // ignore: cast_nullable_to_non_nullable
 as int?,
   ));
 }

@@ -14,7 +14,7 @@ sealed class CountryModel with _$CountryModel {
     String? subregion,
     double? area,
     List<String>? timezones,
-    required String cca2,
+    String? cca2,
     int? population,
   }) = _CountryModel;
 

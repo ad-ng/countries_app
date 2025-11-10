@@ -25,7 +25,10 @@ Widget homeCountryCard(BuildContext context, Country currentCountry) {
     trailing: Icon(Icons.favorite_border),
     onTap: () => context.pushNamed(
       'countryPage',
-      extra: CountryPage(name: currentCountry.commonName, cca2: "cc2 test"),
+      extra: CountryPage(
+        name: currentCountry.commonName,
+        cca2: currentCountry.cca2!,
+      ),
     ),
   );
 }
