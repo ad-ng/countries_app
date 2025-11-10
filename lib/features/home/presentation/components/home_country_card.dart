@@ -9,9 +9,12 @@ Widget homeCountryCard(BuildContext context, Country currentCountry) {
     leading: SizedBox(
       width: 100,
       height: 80,
-      child: ClipRRect(
-        borderRadius: BorderRadiusGeometry.circular(9),
-        child: Image.network(currentCountry.flagPng, fit: BoxFit.cover),
+      child: Hero(
+        tag: currentCountry.commonName,
+        child: ClipRRect(
+          borderRadius: BorderRadiusGeometry.circular(9),
+          child: Image.network(currentCountry.flagPng, fit: BoxFit.cover),
+        ),
       ),
     ),
     title: Text(

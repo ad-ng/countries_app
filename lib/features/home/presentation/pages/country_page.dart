@@ -41,9 +41,12 @@ class _CountryPageState extends State<CountryPage> {
                     width: MediaQuery.of(context).size.width,
                     child: ClipRRect(
                       borderRadius: BorderRadiusGeometry.circular(8),
-                      child: Image.network(
-                        snapshot.data!.flags.png!,
-                        fit: BoxFit.cover,
+                      child: Hero(
+                        tag: snapshot.data!.name.common!,
+                        child: Image.network(
+                          snapshot.data!.flags.png!,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
