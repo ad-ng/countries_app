@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,856 +9,641 @@ part of 'country_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+CountryModel _$CountryModelFromJson(Map<String, dynamic> json) {
+  return _CountryModel.fromJson(json);
+}
 
 /// @nodoc
 mixin _$CountryModel {
+  Name get name => throw _privateConstructorUsedError;
+  Flags get flags => throw _privateConstructorUsedError;
+  List<String>? get capital => throw _privateConstructorUsedError;
+  String? get region => throw _privateConstructorUsedError;
+  String? get subregion => throw _privateConstructorUsedError;
+  double? get area => throw _privateConstructorUsedError;
+  List<String>? get timezones => throw _privateConstructorUsedError;
+  String? get cca2 => throw _privateConstructorUsedError;
+  int? get population => throw _privateConstructorUsedError;
 
- Name get name; Flags get flags; List<String>? get capital; String? get region; String? get subregion; double? get area; List<String>? get timezones; String? get cca2; int? get population;
-/// Create a copy of CountryModel
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$CountryModelCopyWith<CountryModel> get copyWith => _$CountryModelCopyWithImpl<CountryModel>(this as CountryModel, _$identity);
-
-  /// Serializes this CountryModel to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CountryModel&&(identical(other.name, name) || other.name == name)&&(identical(other.flags, flags) || other.flags == flags)&&const DeepCollectionEquality().equals(other.capital, capital)&&(identical(other.region, region) || other.region == region)&&(identical(other.subregion, subregion) || other.subregion == subregion)&&(identical(other.area, area) || other.area == area)&&const DeepCollectionEquality().equals(other.timezones, timezones)&&(identical(other.cca2, cca2) || other.cca2 == cca2)&&(identical(other.population, population) || other.population == population));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,name,flags,const DeepCollectionEquality().hash(capital),region,subregion,area,const DeepCollectionEquality().hash(timezones),cca2,population);
-
-@override
-String toString() {
-  return 'CountryModel(name: $name, flags: $flags, capital: $capital, region: $region, subregion: $subregion, area: $area, timezones: $timezones, cca2: $cca2, population: $population)';
-}
-
-
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CountryModelCopyWith<CountryModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $CountryModelCopyWith<$Res>  {
-  factory $CountryModelCopyWith(CountryModel value, $Res Function(CountryModel) _then) = _$CountryModelCopyWithImpl;
-@useResult
-$Res call({
- Name name, Flags flags, List<String>? capital, String? region, String? subregion, double? area, List<String>? timezones, String? cca2, int? population
-});
+abstract class $CountryModelCopyWith<$Res> {
+  factory $CountryModelCopyWith(
+          CountryModel value, $Res Function(CountryModel) then) =
+      _$CountryModelCopyWithImpl<$Res, CountryModel>;
+  @useResult
+  $Res call(
+      {Name name,
+      Flags flags,
+      List<String>? capital,
+      String? region,
+      String? subregion,
+      double? area,
+      List<String>? timezones,
+      String? cca2,
+      int? population});
 
-
-$NameCopyWith<$Res> get name;$FlagsCopyWith<$Res> get flags;
-
+  $NameCopyWith<$Res> get name;
+  $FlagsCopyWith<$Res> get flags;
 }
+
 /// @nodoc
-class _$CountryModelCopyWithImpl<$Res>
+class _$CountryModelCopyWithImpl<$Res, $Val extends CountryModel>
     implements $CountryModelCopyWith<$Res> {
-  _$CountryModelCopyWithImpl(this._self, this._then);
+  _$CountryModelCopyWithImpl(this._value, this._then);
 
-  final CountryModel _self;
-  final $Res Function(CountryModel) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of CountryModel
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? flags = null,Object? capital = freezed,Object? region = freezed,Object? subregion = freezed,Object? area = freezed,Object? timezones = freezed,Object? cca2 = freezed,Object? population = freezed,}) {
-  return _then(_self.copyWith(
-name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as Name,flags: null == flags ? _self.flags : flags // ignore: cast_nullable_to_non_nullable
-as Flags,capital: freezed == capital ? _self.capital : capital // ignore: cast_nullable_to_non_nullable
-as List<String>?,region: freezed == region ? _self.region : region // ignore: cast_nullable_to_non_nullable
-as String?,subregion: freezed == subregion ? _self.subregion : subregion // ignore: cast_nullable_to_non_nullable
-as String?,area: freezed == area ? _self.area : area // ignore: cast_nullable_to_non_nullable
-as double?,timezones: freezed == timezones ? _self.timezones : timezones // ignore: cast_nullable_to_non_nullable
-as List<String>?,cca2: freezed == cca2 ? _self.cca2 : cca2 // ignore: cast_nullable_to_non_nullable
-as String?,population: freezed == population ? _self.population : population // ignore: cast_nullable_to_non_nullable
-as int?,
-  ));
-}
-/// Create a copy of CountryModel
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$NameCopyWith<$Res> get name {
-  
-  return $NameCopyWith<$Res>(_self.name, (value) {
-    return _then(_self.copyWith(name: value));
-  });
-}/// Create a copy of CountryModel
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$FlagsCopyWith<$Res> get flags {
-  
-  return $FlagsCopyWith<$Res>(_self.flags, (value) {
-    return _then(_self.copyWith(flags: value));
-  });
-}
-}
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? flags = null,
+    Object? capital = freezed,
+    Object? region = freezed,
+    Object? subregion = freezed,
+    Object? area = freezed,
+    Object? timezones = freezed,
+    Object? cca2 = freezed,
+    Object? population = freezed,
+  }) {
+    return _then(_value.copyWith(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as Name,
+      flags: null == flags
+          ? _value.flags
+          : flags // ignore: cast_nullable_to_non_nullable
+              as Flags,
+      capital: freezed == capital
+          ? _value.capital
+          : capital // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      region: freezed == region
+          ? _value.region
+          : region // ignore: cast_nullable_to_non_nullable
+              as String?,
+      subregion: freezed == subregion
+          ? _value.subregion
+          : subregion // ignore: cast_nullable_to_non_nullable
+              as String?,
+      area: freezed == area
+          ? _value.area
+          : area // ignore: cast_nullable_to_non_nullable
+              as double?,
+      timezones: freezed == timezones
+          ? _value.timezones
+          : timezones // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      cca2: freezed == cca2
+          ? _value.cca2
+          : cca2 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      population: freezed == population
+          ? _value.population
+          : population // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ) as $Val);
+  }
 
+  @override
+  @pragma('vm:prefer-inline')
+  $NameCopyWith<$Res> get name {
+    return $NameCopyWith<$Res>(_value.name, (value) {
+      return _then(_value.copyWith(name: value) as $Val);
+    });
+  }
 
-/// Adds pattern-matching-related methods to [CountryModel].
-extension CountryModelPatterns on CountryModel {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _CountryModel value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _CountryModel() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _CountryModel value)  $default,){
-final _that = this;
-switch (_that) {
-case _CountryModel():
-return $default(_that);}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _CountryModel value)?  $default,){
-final _that = this;
-switch (_that) {
-case _CountryModel() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( Name name,  Flags flags,  List<String>? capital,  String? region,  String? subregion,  double? area,  List<String>? timezones,  String? cca2,  int? population)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _CountryModel() when $default != null:
-return $default(_that.name,_that.flags,_that.capital,_that.region,_that.subregion,_that.area,_that.timezones,_that.cca2,_that.population);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( Name name,  Flags flags,  List<String>? capital,  String? region,  String? subregion,  double? area,  List<String>? timezones,  String? cca2,  int? population)  $default,) {final _that = this;
-switch (_that) {
-case _CountryModel():
-return $default(_that.name,_that.flags,_that.capital,_that.region,_that.subregion,_that.area,_that.timezones,_that.cca2,_that.population);}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( Name name,  Flags flags,  List<String>? capital,  String? region,  String? subregion,  double? area,  List<String>? timezones,  String? cca2,  int? population)?  $default,) {final _that = this;
-switch (_that) {
-case _CountryModel() when $default != null:
-return $default(_that.name,_that.flags,_that.capital,_that.region,_that.subregion,_that.area,_that.timezones,_that.cca2,_that.population);case _:
-  return null;
-
-}
+  @override
+  @pragma('vm:prefer-inline')
+  $FlagsCopyWith<$Res> get flags {
+    return $FlagsCopyWith<$Res>(_value.flags, (value) {
+      return _then(_value.copyWith(flags: value) as $Val);
+    });
+  }
 }
 
+/// @nodoc
+abstract class _$$CountryModelImplCopyWith<$Res>
+    implements $CountryModelCopyWith<$Res> {
+  factory _$$CountryModelImplCopyWith(
+          _$CountryModelImpl value, $Res Function(_$CountryModelImpl) then) =
+      __$$CountryModelImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {Name name,
+      Flags flags,
+      List<String>? capital,
+      String? region,
+      String? subregion,
+      double? area,
+      List<String>? timezones,
+      String? cca2,
+      int? population});
+
+  @override
+  $NameCopyWith<$Res> get name;
+  @override
+  $FlagsCopyWith<$Res> get flags;
+}
+
+/// @nodoc
+class __$$CountryModelImplCopyWithImpl<$Res>
+    extends _$CountryModelCopyWithImpl<$Res, _$CountryModelImpl>
+    implements _$$CountryModelImplCopyWith<$Res> {
+  __$$CountryModelImplCopyWithImpl(
+      _$CountryModelImpl _value, $Res Function(_$CountryModelImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? flags = null,
+    Object? capital = freezed,
+    Object? region = freezed,
+    Object? subregion = freezed,
+    Object? area = freezed,
+    Object? timezones = freezed,
+    Object? cca2 = freezed,
+    Object? population = freezed,
+  }) {
+    return _then(_$CountryModelImpl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as Name,
+      flags: null == flags
+          ? _value.flags
+          : flags // ignore: cast_nullable_to_non_nullable
+              as Flags,
+      capital: freezed == capital
+          ? _value._capital
+          : capital // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      region: freezed == region
+          ? _value.region
+          : region // ignore: cast_nullable_to_non_nullable
+              as String?,
+      subregion: freezed == subregion
+          ? _value.subregion
+          : subregion // ignore: cast_nullable_to_non_nullable
+              as String?,
+      area: freezed == area
+          ? _value.area
+          : area // ignore: cast_nullable_to_non_nullable
+              as double?,
+      timezones: freezed == timezones
+          ? _value._timezones
+          : timezones // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      cca2: freezed == cca2
+          ? _value.cca2
+          : cca2 // ignore: cast_nullable_to_non_nullable
+              as String?,
+      population: freezed == population
+          ? _value.population
+          : population // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+class _$CountryModelImpl implements _CountryModel {
+  const _$CountryModelImpl(
+      {required this.name,
+      required this.flags,
+      final List<String>? capital,
+      this.region,
+      this.subregion,
+      this.area,
+      final List<String>? timezones,
+      this.cca2,
+      this.population})
+      : _capital = capital,
+        _timezones = timezones;
 
-class _CountryModel implements CountryModel {
-  const _CountryModel({required this.name, required this.flags, final  List<String>? capital, this.region, this.subregion, this.area, final  List<String>? timezones, this.cca2, this.population}): _capital = capital,_timezones = timezones;
-  factory _CountryModel.fromJson(Map<String, dynamic> json) => _$CountryModelFromJson(json);
+  factory _$CountryModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CountryModelImplFromJson(json);
 
-@override final  Name name;
-@override final  Flags flags;
- final  List<String>? _capital;
-@override List<String>? get capital {
-  final value = _capital;
-  if (value == null) return null;
-  if (_capital is EqualUnmodifiableListView) return _capital;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+  @override
+  final Name name;
+  @override
+  final Flags flags;
+  final List<String>? _capital;
+  @override
+  List<String>? get capital {
+    final value = _capital;
+    if (value == null) return null;
+    if (_capital is EqualUnmodifiableListView) return _capital;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final String? region;
+  @override
+  final String? subregion;
+  @override
+  final double? area;
+  final List<String>? _timezones;
+  @override
+  List<String>? get timezones {
+    final value = _timezones;
+    if (value == null) return null;
+    if (_timezones is EqualUnmodifiableListView) return _timezones;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final String? cca2;
+  @override
+  final int? population;
+
+  @override
+  String toString() {
+    return 'CountryModel(name: $name, flags: $flags, capital: $capital, region: $region, subregion: $subregion, area: $area, timezones: $timezones, cca2: $cca2, population: $population)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CountryModelImpl &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.flags, flags) || other.flags == flags) &&
+            const DeepCollectionEquality().equals(other._capital, _capital) &&
+            (identical(other.region, region) || other.region == region) &&
+            (identical(other.subregion, subregion) ||
+                other.subregion == subregion) &&
+            (identical(other.area, area) || other.area == area) &&
+            const DeepCollectionEquality()
+                .equals(other._timezones, _timezones) &&
+            (identical(other.cca2, cca2) || other.cca2 == cca2) &&
+            (identical(other.population, population) ||
+                other.population == population));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      flags,
+      const DeepCollectionEquality().hash(_capital),
+      region,
+      subregion,
+      area,
+      const DeepCollectionEquality().hash(_timezones),
+      cca2,
+      population);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CountryModelImplCopyWith<_$CountryModelImpl> get copyWith =>
+      __$$CountryModelImplCopyWithImpl<_$CountryModelImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CountryModelImplToJson(
+      this,
+    );
+  }
 }
 
-@override final  String? region;
-@override final  String? subregion;
-@override final  double? area;
- final  List<String>? _timezones;
-@override List<String>? get timezones {
-  final value = _timezones;
-  if (value == null) return null;
-  if (_timezones is EqualUnmodifiableListView) return _timezones;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(value);
+abstract class _CountryModel implements CountryModel {
+  const factory _CountryModel(
+      {required final Name name,
+      required final Flags flags,
+      final List<String>? capital,
+      final String? region,
+      final String? subregion,
+      final double? area,
+      final List<String>? timezones,
+      final String? cca2,
+      final int? population}) = _$CountryModelImpl;
+
+  factory _CountryModel.fromJson(Map<String, dynamic> json) =
+      _$CountryModelImpl.fromJson;
+
+  @override
+  Name get name;
+  @override
+  Flags get flags;
+  @override
+  List<String>? get capital;
+  @override
+  String? get region;
+  @override
+  String? get subregion;
+  @override
+  double? get area;
+  @override
+  List<String>? get timezones;
+  @override
+  String? get cca2;
+  @override
+  int? get population;
+  @override
+  @JsonKey(ignore: true)
+  _$$CountryModelImplCopyWith<_$CountryModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-@override final  String? cca2;
-@override final  int? population;
-
-/// Create a copy of CountryModel
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$CountryModelCopyWith<_CountryModel> get copyWith => __$CountryModelCopyWithImpl<_CountryModel>(this, _$identity);
-
-@override
-Map<String, dynamic> toJson() {
-  return _$CountryModelToJson(this, );
+Name _$NameFromJson(Map<String, dynamic> json) {
+  return _Name.fromJson(json);
 }
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CountryModel&&(identical(other.name, name) || other.name == name)&&(identical(other.flags, flags) || other.flags == flags)&&const DeepCollectionEquality().equals(other._capital, _capital)&&(identical(other.region, region) || other.region == region)&&(identical(other.subregion, subregion) || other.subregion == subregion)&&(identical(other.area, area) || other.area == area)&&const DeepCollectionEquality().equals(other._timezones, _timezones)&&(identical(other.cca2, cca2) || other.cca2 == cca2)&&(identical(other.population, population) || other.population == population));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,name,flags,const DeepCollectionEquality().hash(_capital),region,subregion,area,const DeepCollectionEquality().hash(_timezones),cca2,population);
-
-@override
-String toString() {
-  return 'CountryModel(name: $name, flags: $flags, capital: $capital, region: $region, subregion: $subregion, area: $area, timezones: $timezones, cca2: $cca2, population: $population)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$CountryModelCopyWith<$Res> implements $CountryModelCopyWith<$Res> {
-  factory _$CountryModelCopyWith(_CountryModel value, $Res Function(_CountryModel) _then) = __$CountryModelCopyWithImpl;
-@override @useResult
-$Res call({
- Name name, Flags flags, List<String>? capital, String? region, String? subregion, double? area, List<String>? timezones, String? cca2, int? population
-});
-
-
-@override $NameCopyWith<$Res> get name;@override $FlagsCopyWith<$Res> get flags;
-
-}
-/// @nodoc
-class __$CountryModelCopyWithImpl<$Res>
-    implements _$CountryModelCopyWith<$Res> {
-  __$CountryModelCopyWithImpl(this._self, this._then);
-
-  final _CountryModel _self;
-  final $Res Function(_CountryModel) _then;
-
-/// Create a copy of CountryModel
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? flags = null,Object? capital = freezed,Object? region = freezed,Object? subregion = freezed,Object? area = freezed,Object? timezones = freezed,Object? cca2 = freezed,Object? population = freezed,}) {
-  return _then(_CountryModel(
-name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as Name,flags: null == flags ? _self.flags : flags // ignore: cast_nullable_to_non_nullable
-as Flags,capital: freezed == capital ? _self._capital : capital // ignore: cast_nullable_to_non_nullable
-as List<String>?,region: freezed == region ? _self.region : region // ignore: cast_nullable_to_non_nullable
-as String?,subregion: freezed == subregion ? _self.subregion : subregion // ignore: cast_nullable_to_non_nullable
-as String?,area: freezed == area ? _self.area : area // ignore: cast_nullable_to_non_nullable
-as double?,timezones: freezed == timezones ? _self._timezones : timezones // ignore: cast_nullable_to_non_nullable
-as List<String>?,cca2: freezed == cca2 ? _self.cca2 : cca2 // ignore: cast_nullable_to_non_nullable
-as String?,population: freezed == population ? _self.population : population // ignore: cast_nullable_to_non_nullable
-as int?,
-  ));
-}
-
-/// Create a copy of CountryModel
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$NameCopyWith<$Res> get name {
-  
-  return $NameCopyWith<$Res>(_self.name, (value) {
-    return _then(_self.copyWith(name: value));
-  });
-}/// Create a copy of CountryModel
-/// with the given fields replaced by the non-null parameter values.
-@override
-@pragma('vm:prefer-inline')
-$FlagsCopyWith<$Res> get flags {
-  
-  return $FlagsCopyWith<$Res>(_self.flags, (value) {
-    return _then(_self.copyWith(flags: value));
-  });
-}
-}
-
 
 /// @nodoc
 mixin _$Name {
+  String? get common => throw _privateConstructorUsedError;
 
- String? get common;
-/// Create a copy of Name
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$NameCopyWith<Name> get copyWith => _$NameCopyWithImpl<Name>(this as Name, _$identity);
-
-  /// Serializes this Name to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Name&&(identical(other.common, common) || other.common == common));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,common);
-
-@override
-String toString() {
-  return 'Name(common: $common)';
-}
-
-
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $NameCopyWith<Name> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $NameCopyWith<$Res>  {
-  factory $NameCopyWith(Name value, $Res Function(Name) _then) = _$NameCopyWithImpl;
-@useResult
-$Res call({
- String? common
-});
-
-
-
-
+abstract class $NameCopyWith<$Res> {
+  factory $NameCopyWith(Name value, $Res Function(Name) then) =
+      _$NameCopyWithImpl<$Res, Name>;
+  @useResult
+  $Res call({String? common});
 }
+
 /// @nodoc
-class _$NameCopyWithImpl<$Res>
+class _$NameCopyWithImpl<$Res, $Val extends Name>
     implements $NameCopyWith<$Res> {
-  _$NameCopyWithImpl(this._self, this._then);
+  _$NameCopyWithImpl(this._value, this._then);
 
-  final Name _self;
-  final $Res Function(Name) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of Name
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? common = freezed,}) {
-  return _then(_self.copyWith(
-common: freezed == common ? _self.common : common // ignore: cast_nullable_to_non_nullable
-as String?,
-  ));
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? common = freezed,
+  }) {
+    return _then(_value.copyWith(
+      common: freezed == common
+          ? _value.common
+          : common // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$NameImplCopyWith<$Res> implements $NameCopyWith<$Res> {
+  factory _$$NameImplCopyWith(
+          _$NameImpl value, $Res Function(_$NameImpl) then) =
+      __$$NameImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? common});
 }
 
+/// @nodoc
+class __$$NameImplCopyWithImpl<$Res>
+    extends _$NameCopyWithImpl<$Res, _$NameImpl>
+    implements _$$NameImplCopyWith<$Res> {
+  __$$NameImplCopyWithImpl(_$NameImpl _value, $Res Function(_$NameImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [Name].
-extension NamePatterns on Name {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Name value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _Name() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Name value)  $default,){
-final _that = this;
-switch (_that) {
-case _Name():
-return $default(_that);}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Name value)?  $default,){
-final _that = this;
-switch (_that) {
-case _Name() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? common)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _Name() when $default != null:
-return $default(_that.common);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? common)  $default,) {final _that = this;
-switch (_that) {
-case _Name():
-return $default(_that.common);}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? common)?  $default,) {final _that = this;
-switch (_that) {
-case _Name() when $default != null:
-return $default(_that.common);case _:
-  return null;
-
-}
-}
-
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? common = freezed,
+  }) {
+    return _then(_$NameImpl(
+      common: freezed == common
+          ? _value.common
+          : common // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+class _$NameImpl implements _Name {
+  const _$NameImpl({this.common});
 
-class _Name implements Name {
-  const _Name({this.common});
-  factory _Name.fromJson(Map<String, dynamic> json) => _$NameFromJson(json);
+  factory _$NameImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NameImplFromJson(json);
 
-@override final  String? common;
+  @override
+  final String? common;
 
-/// Create a copy of Name
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$NameCopyWith<_Name> get copyWith => __$NameCopyWithImpl<_Name>(this, _$identity);
+  @override
+  String toString() {
+    return 'Name(common: $common)';
+  }
 
-@override
-Map<String, dynamic> toJson() {
-  return _$NameToJson(this, );
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NameImpl &&
+            (identical(other.common, common) || other.common == common));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, common);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NameImplCopyWith<_$NameImpl> get copyWith =>
+      __$$NameImplCopyWithImpl<_$NameImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$NameImplToJson(
+      this,
+    );
+  }
 }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Name&&(identical(other.common, common) || other.common == common));
+abstract class _Name implements Name {
+  const factory _Name({final String? common}) = _$NameImpl;
+
+  factory _Name.fromJson(Map<String, dynamic> json) = _$NameImpl.fromJson;
+
+  @override
+  String? get common;
+  @override
+  @JsonKey(ignore: true)
+  _$$NameImplCopyWith<_$NameImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,common);
-
-@override
-String toString() {
-  return 'Name(common: $common)';
+Flags _$FlagsFromJson(Map<String, dynamic> json) {
+  return _Flags.fromJson(json);
 }
-
-
-}
-
-/// @nodoc
-abstract mixin class _$NameCopyWith<$Res> implements $NameCopyWith<$Res> {
-  factory _$NameCopyWith(_Name value, $Res Function(_Name) _then) = __$NameCopyWithImpl;
-@override @useResult
-$Res call({
- String? common
-});
-
-
-
-
-}
-/// @nodoc
-class __$NameCopyWithImpl<$Res>
-    implements _$NameCopyWith<$Res> {
-  __$NameCopyWithImpl(this._self, this._then);
-
-  final _Name _self;
-  final $Res Function(_Name) _then;
-
-/// Create a copy of Name
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? common = freezed,}) {
-  return _then(_Name(
-common: freezed == common ? _self.common : common // ignore: cast_nullable_to_non_nullable
-as String?,
-  ));
-}
-
-
-}
-
 
 /// @nodoc
 mixin _$Flags {
+  String? get png => throw _privateConstructorUsedError;
+  String? get svg => throw _privateConstructorUsedError;
 
- String? get png; String? get svg;
-/// Create a copy of Flags
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$FlagsCopyWith<Flags> get copyWith => _$FlagsCopyWithImpl<Flags>(this as Flags, _$identity);
-
-  /// Serializes this Flags to a JSON map.
-  Map<String, dynamic> toJson();
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Flags&&(identical(other.png, png) || other.png == png)&&(identical(other.svg, svg) || other.svg == svg));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,png,svg);
-
-@override
-String toString() {
-  return 'Flags(png: $png, svg: $svg)';
-}
-
-
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $FlagsCopyWith<Flags> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $FlagsCopyWith<$Res>  {
-  factory $FlagsCopyWith(Flags value, $Res Function(Flags) _then) = _$FlagsCopyWithImpl;
-@useResult
-$Res call({
- String? png, String? svg
-});
-
-
-
-
+abstract class $FlagsCopyWith<$Res> {
+  factory $FlagsCopyWith(Flags value, $Res Function(Flags) then) =
+      _$FlagsCopyWithImpl<$Res, Flags>;
+  @useResult
+  $Res call({String? png, String? svg});
 }
+
 /// @nodoc
-class _$FlagsCopyWithImpl<$Res>
+class _$FlagsCopyWithImpl<$Res, $Val extends Flags>
     implements $FlagsCopyWith<$Res> {
-  _$FlagsCopyWithImpl(this._self, this._then);
+  _$FlagsCopyWithImpl(this._value, this._then);
 
-  final Flags _self;
-  final $Res Function(Flags) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of Flags
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? png = freezed,Object? svg = freezed,}) {
-  return _then(_self.copyWith(
-png: freezed == png ? _self.png : png // ignore: cast_nullable_to_non_nullable
-as String?,svg: freezed == svg ? _self.svg : svg // ignore: cast_nullable_to_non_nullable
-as String?,
-  ));
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? png = freezed,
+    Object? svg = freezed,
+  }) {
+    return _then(_value.copyWith(
+      png: freezed == png
+          ? _value.png
+          : png // ignore: cast_nullable_to_non_nullable
+              as String?,
+      svg: freezed == svg
+          ? _value.svg
+          : svg // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
 }
 
+/// @nodoc
+abstract class _$$FlagsImplCopyWith<$Res> implements $FlagsCopyWith<$Res> {
+  factory _$$FlagsImplCopyWith(
+          _$FlagsImpl value, $Res Function(_$FlagsImpl) then) =
+      __$$FlagsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? png, String? svg});
 }
 
+/// @nodoc
+class __$$FlagsImplCopyWithImpl<$Res>
+    extends _$FlagsCopyWithImpl<$Res, _$FlagsImpl>
+    implements _$$FlagsImplCopyWith<$Res> {
+  __$$FlagsImplCopyWithImpl(
+      _$FlagsImpl _value, $Res Function(_$FlagsImpl) _then)
+      : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [Flags].
-extension FlagsPatterns on Flags {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Flags value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _Flags() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Flags value)  $default,){
-final _that = this;
-switch (_that) {
-case _Flags():
-return $default(_that);}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Flags value)?  $default,){
-final _that = this;
-switch (_that) {
-case _Flags() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? png,  String? svg)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _Flags() when $default != null:
-return $default(_that.png,_that.svg);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? png,  String? svg)  $default,) {final _that = this;
-switch (_that) {
-case _Flags():
-return $default(_that.png,_that.svg);}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? png,  String? svg)?  $default,) {final _that = this;
-switch (_that) {
-case _Flags() when $default != null:
-return $default(_that.png,_that.svg);case _:
-  return null;
-
-}
-}
-
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? png = freezed,
+    Object? svg = freezed,
+  }) {
+    return _then(_$FlagsImpl(
+      png: freezed == png
+          ? _value.png
+          : png // ignore: cast_nullable_to_non_nullable
+              as String?,
+      svg: freezed == svg
+          ? _value.svg
+          : svg // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+class _$FlagsImpl implements _Flags {
+  const _$FlagsImpl({this.png, this.svg});
 
-class _Flags implements Flags {
-  const _Flags({this.png, this.svg});
-  factory _Flags.fromJson(Map<String, dynamic> json) => _$FlagsFromJson(json);
+  factory _$FlagsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FlagsImplFromJson(json);
 
-@override final  String? png;
-@override final  String? svg;
+  @override
+  final String? png;
+  @override
+  final String? svg;
 
-/// Create a copy of Flags
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$FlagsCopyWith<_Flags> get copyWith => __$FlagsCopyWithImpl<_Flags>(this, _$identity);
+  @override
+  String toString() {
+    return 'Flags(png: $png, svg: $svg)';
+  }
 
-@override
-Map<String, dynamic> toJson() {
-  return _$FlagsToJson(this, );
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FlagsImpl &&
+            (identical(other.png, png) || other.png == png) &&
+            (identical(other.svg, svg) || other.svg == svg));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, png, svg);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FlagsImplCopyWith<_$FlagsImpl> get copyWith =>
+      __$$FlagsImplCopyWithImpl<_$FlagsImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FlagsImplToJson(
+      this,
+    );
+  }
 }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Flags&&(identical(other.png, png) || other.png == png)&&(identical(other.svg, svg) || other.svg == svg));
+abstract class _Flags implements Flags {
+  const factory _Flags({final String? png, final String? svg}) = _$FlagsImpl;
+
+  factory _Flags.fromJson(Map<String, dynamic> json) = _$FlagsImpl.fromJson;
+
+  @override
+  String? get png;
+  @override
+  String? get svg;
+  @override
+  @JsonKey(ignore: true)
+  _$$FlagsImplCopyWith<_$FlagsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,png,svg);
-
-@override
-String toString() {
-  return 'Flags(png: $png, svg: $svg)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$FlagsCopyWith<$Res> implements $FlagsCopyWith<$Res> {
-  factory _$FlagsCopyWith(_Flags value, $Res Function(_Flags) _then) = __$FlagsCopyWithImpl;
-@override @useResult
-$Res call({
- String? png, String? svg
-});
-
-
-
-
-}
-/// @nodoc
-class __$FlagsCopyWithImpl<$Res>
-    implements _$FlagsCopyWith<$Res> {
-  __$FlagsCopyWithImpl(this._self, this._then);
-
-  final _Flags _self;
-  final $Res Function(_Flags) _then;
-
-/// Create a copy of Flags
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? png = freezed,Object? svg = freezed,}) {
-  return _then(_Flags(
-png: freezed == png ? _self.png : png // ignore: cast_nullable_to_non_nullable
-as String?,svg: freezed == svg ? _self.svg : svg // ignore: cast_nullable_to_non_nullable
-as String?,
-  ));
-}
-
-
-}
-
-// dart format on

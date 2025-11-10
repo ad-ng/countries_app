@@ -6,13 +6,12 @@ part of 'country_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_CountryModel _$CountryModelFromJson(Map<String, dynamic> json) =>
-    _CountryModel(
+_$CountryModelImpl _$$CountryModelImplFromJson(Map<String, dynamic> json) =>
+    _$CountryModelImpl(
       name: Name.fromJson(json['name'] as Map<String, dynamic>),
       flags: Flags.fromJson(json['flags'] as Map<String, dynamic>),
-      capital: (json['capital'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
+      capital:
+          (json['capital'] as List<dynamic>?)?.map((e) => e as String).toList(),
       region: json['region'] as String?,
       subregion: json['subregion'] as String?,
       area: (json['area'] as num?)?.toDouble(),
@@ -23,7 +22,7 @@ _CountryModel _$CountryModelFromJson(Map<String, dynamic> json) =>
       population: (json['population'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$CountryModelToJson(_CountryModel instance) =>
+Map<String, dynamic> _$$CountryModelImplToJson(_$CountryModelImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'flags': instance.flags,
@@ -36,17 +35,22 @@ Map<String, dynamic> _$CountryModelToJson(_CountryModel instance) =>
       'population': instance.population,
     };
 
-_Name _$NameFromJson(Map<String, dynamic> json) =>
-    _Name(common: json['common'] as String?);
+_$NameImpl _$$NameImplFromJson(Map<String, dynamic> json) => _$NameImpl(
+      common: json['common'] as String?,
+    );
 
-Map<String, dynamic> _$NameToJson(_Name instance) => <String, dynamic>{
-  'common': instance.common,
-};
+Map<String, dynamic> _$$NameImplToJson(_$NameImpl instance) =>
+    <String, dynamic>{
+      'common': instance.common,
+    };
 
-_Flags _$FlagsFromJson(Map<String, dynamic> json) =>
-    _Flags(png: json['png'] as String?, svg: json['svg'] as String?);
+_$FlagsImpl _$$FlagsImplFromJson(Map<String, dynamic> json) => _$FlagsImpl(
+      png: json['png'] as String?,
+      svg: json['svg'] as String?,
+    );
 
-Map<String, dynamic> _$FlagsToJson(_Flags instance) => <String, dynamic>{
-  'png': instance.png,
-  'svg': instance.svg,
-};
+Map<String, dynamic> _$$FlagsImplToJson(_$FlagsImpl instance) =>
+    <String, dynamic>{
+      'png': instance.png,
+      'svg': instance.svg,
+    };
