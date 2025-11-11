@@ -17,7 +17,7 @@ class _MyCustomSearchState extends State<MyCustomSearch> {
 
     widget.searchQuery.addListener(() {
       final query = widget.searchQuery.text.trim();
-
+      setState(() {});
       if (query.isEmpty) {
         BlocProvider.of<CountryCubit>(context).loadCountries();
       } else {
@@ -48,17 +48,17 @@ class _MyCustomSearchState extends State<MyCustomSearch> {
               borderSide: BorderSide(color: Colors.transparent),
             ),
             prefixIcon: Icon(Icons.search, size: 30),
-            hint: Text(
-              'Search for a country',
-              style: TextStyle(fontSize: 18, color: Colors.black38),
-            ),
+            hintText: 'Search for a country',
+            hintStyle: TextStyle(fontSize: 18, color: Colors.black38),
             isDense: true,
-            suffixIcon: IconButton(
-              onPressed: () {
-                widget.searchQuery.clear();
-              },
-              icon: Icon(Icons.cancel),
-            ),
+            suffixIcon: widget.searchQuery.text.isNotEmpty
+                ? IconButton(
+                    onPressed: () {
+                      widget.searchQuery.clear();
+                    },
+                    icon: Icon(Icons.cancel),
+                  )
+                : null,
           ),
         ),
       ),
