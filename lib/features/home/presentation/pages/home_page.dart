@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     );
                   },
-                  error: (msg) => Center(child: Text(msg)),
+                  error: (msg) => Center(child: Text('No countries found.')),
                 );
               },
             ),

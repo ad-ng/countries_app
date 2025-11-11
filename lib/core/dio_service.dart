@@ -1,5 +1,6 @@
 import 'package:countries_app/core/error_interceptor.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 ///all general dio configurations
 class DioService {
@@ -13,7 +14,7 @@ class DioService {
 
   /// a function to connect dio globally in an app
   void setup() {
-    dio.options.baseUrl = 'https://restcountries.com';
+    dio.options.baseUrl = dotenv.env['BASEURL']!;
 
     dio.options.connectTimeout = const Duration(seconds: 15);
     dio.options.receiveTimeout = const Duration(seconds: 15);
