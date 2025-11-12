@@ -41,7 +41,7 @@ Widget favoritesCard(BuildContext context, CountryHiveModel currentCountry) {
         context.read<FavoritesCubit>().isFavorite(currentCountry.cca2)
             ? Icons.favorite
             : Icons.favorite_border,
-        color: Colors.black,
+        color: Theme.of(context).colorScheme.secondary,
       ),
       onPressed: () {
         context.read<FavoritesCubit>().toggleFavorite(

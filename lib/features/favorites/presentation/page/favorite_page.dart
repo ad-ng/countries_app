@@ -34,7 +34,14 @@ class _FavoritePageState extends State<FavoritePage> {
             child: BlocBuilder<FavoritesCubit, List<CountryHiveModel>>(
               builder: (context, favorites) {
                 if (favorites.isEmpty) {
-                  return Center(child: Text("No favorites yet"));
+                  return Center(
+                    child: Text(
+                      "No favorites yet",
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.secondary,
+                      ),
+                    ),
+                  );
                 }
                 return ListView.builder(
                   itemCount: favorites.length,
