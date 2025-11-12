@@ -72,26 +72,35 @@ class _HomePageState extends State<HomePage> {
               builder: (context, state) {
                 return state.when(
                   loading: () => const MyShimmer(),
+
                   success: (countries) {
                     if (countries.isEmpty) {
                       return const Center(child: Text("No countries found."));
                     }
 
-                    return AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 300),
-                      child: ListView.builder(
-                        key: ValueKey<bool>(isSearching),
-                        itemCount: countries.length,
-                        itemBuilder: (context, index) {
-                          final country = countries[index];
-                          return isSearching
-                              ? searchCountryCard(context, country)
-                              : homeCountryCard(context, country);
-                        },
+                    return RefreshIndicator(
+                      onRefresh: () =>
+                          context.read<CountryCubit>().loadCountries(),
+
+                      child: AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 300),
+                        child: ListView.builder(
+                          key: ValueKey<bool>(isSearching),
+                          itemCount: countries.length,
+                          itemBuilder: (context, index) {
+                            final country = countries[index];
+
+                            return isSearching
+                                ? searchCountryCard(context, country)
+                                : homeCountryCard(context, country);
+                          },
+                        ),
                       ),
                     );
                   },
-                  error: (msg) => Center(child: Text('No countries found.')),
+
+                  error: (msg) =>
+                      const Center(child: Text('No countries found.')),
                 );
               },
             ),
