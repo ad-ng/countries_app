@@ -47,11 +47,8 @@ class _CountryPageState extends State<CountryPage> {
                     child: ClipRRect(
                       borderRadius: BorderRadiusGeometry.circular(8),
                       child: Hero(
-                        tag: country.commonName,
-                        child: Image.network(
-                          country.flagPng,
-                          fit: BoxFit.cover,
-                        ),
+                        tag: country.name,
+                        child: Image.network(country.flag, fit: BoxFit.cover),
                       ),
                     ),
                   ),
@@ -72,15 +69,15 @@ class _CountryPageState extends State<CountryPage> {
                   eachStatistic(
                     context,
                     'Area',
-                    '${formatter.format(country.area!)} sq km',
+                    '${formatter.format(country.area)} sq km',
                   ),
                   eachStatistic(
                     context,
                     'Population',
                     customNumberFormatFull(country.population),
                   ),
-                  eachStatistic(context, 'Region', country.region!),
-                  eachStatistic(context, 'Sub Region', country.subregion!),
+                  eachStatistic(context, 'Region', country.region),
+                  eachStatistic(context, 'Sub Region', country.subregion),
                   Padding(
                     padding: const EdgeInsets.only(
                       top: 30,
@@ -98,7 +95,7 @@ class _CountryPageState extends State<CountryPage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Wrap(
-                      children: country.timezones!
+                      children: country.timezones
                           .map(
                             (e) => Container(
                               padding: EdgeInsets.symmetric(

@@ -1,4 +1,4 @@
-import 'package:countries_app/features/home/domain/entity/country.dart';
+import 'package:countries_app/features/home/domain/entity/country_details.dart';
 import 'package:countries_app/features/home/domain/repository/country_repository.dart';
 
 class GetOneCountry {
@@ -6,7 +6,7 @@ class GetOneCountry {
 
   GetOneCountry(this.repository);
 
-  Future<Country> call(String cca2) async {
+  Future<CountryDetails> call(String cca2) async {
     return await repository.fetchOneCountryByCca2(cca2);
   }
 }

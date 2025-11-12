@@ -1,11 +1,12 @@
 import 'package:countries_app/core/dio_service.dart';
-import 'package:countries_app/features/home/data/models/country_model.dart';
+import 'package:countries_app/features/home/data/models/country_details_model.dart';
+import 'package:countries_app/features/home/data/models/country_summary_model.dart';
 import 'package:dio/dio.dart';
 
 class CountryApiService {
   final Dio _dio = DioService.instance.dio;
 
-  Future<List<CountryModel>> fetchAllCountries() async {
+  Future<List<CountrySummaryModel>> fetchAllCountries() async {
     try {
       final response = await _dio.get<List<dynamic>>(
         '/v3.1/all?fields=name,flags,population,cca2',
@@ -15,7 +16,10 @@ class CountryApiService {
 
       if (dataJson != null) {
         return dataJson
-            .map((json) => CountryModel.fromJson(json as Map<String, dynamic>))
+            .map(
+              (json) =>
+                  CountrySummaryModel.fromJson(json as Map<String, dynamic>),
+            )
             .toList();
       } else {
         throw Exception('Expected a list but got ${dataJson.runtimeType}');
@@ -27,7 +31,7 @@ class CountryApiService {
     }
   }
 
-  Future<List<CountryModel>> searchCountries(String searchQuery) async {
+  Future<List<CountrySummaryModel>> searchCountries(String searchQuery) async {
     try {
       final response = await _dio.get<List<dynamic>>(
         '/v3.1/name/$searchQuery?fields=name,flags,population,cca2',
@@ -37,7 +41,10 @@ class CountryApiService {
 
       if (dataJson != null) {
         return dataJson
-            .map((json) => CountryModel.fromJson(json as Map<String, dynamic>))
+            .map(
+              (json) =>
+                  CountrySummaryModel.fromJson(json as Map<String, dynamic>),
+            )
             .toList();
       } else {
         throw Exception('Expected a list but got ${dataJson.runtimeType}');
@@ -49,7 +56,7 @@ class CountryApiService {
     }
   }
 
-  Future<CountryModel> fetchOneCountryByCca2(String cca2) async {
+  Future<CountryDetailsModel> fetchOneCountryByCca2(String cca2) async {
     try {
       final response = await _dio.get(
         '/v3.1/alpha/$cca2?fields=name,flags,population,capital,region,subregion,area,timezones',
@@ -62,7 +69,7 @@ class CountryApiService {
       }
 
       if (dataJson is Map<String, dynamic>) {
-        return CountryModel.fromJson(dataJson);
+        return CountryDetailsModel.fromJson(dataJson);
       }
 
       throw Exception('Unexpected data format: ${dataJson.runtimeType}');

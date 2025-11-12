@@ -1,4 +1,4 @@
-import 'package:countries_app/features/home/domain/entity/country.dart';
+import 'package:countries_app/features/home/domain/entity/country_summary.dart';
 import 'package:countries_app/features/home/domain/repository/country_repository.dart';
 
 class GetAllCountries {
@@ -6,7 +6,7 @@ class GetAllCountries {
 
   GetAllCountries(this.repository);
 
-  Future<List<Country>> call() async {
+  Future<List<CountrySummary>> call() async {
     return await repository.getAllCountries();
   }
 }

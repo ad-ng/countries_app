@@ -1,27 +1,27 @@
 import 'package:countries_app/features/favorites/data/models/country_hive_model.dart';
 import 'package:countries_app/features/favorites/presentation/cubit/favorites_cubit.dart';
-import 'package:countries_app/features/home/domain/entity/country.dart';
+import 'package:countries_app/features/home/domain/entity/country_summary.dart';
 import 'package:countries_app/features/home/domain/usecases/number_formatter.dart';
 import 'package:countries_app/features/home/presentation/pages/country_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-Widget homeCountryCard(BuildContext context, Country currentCountry) {
+Widget homeCountryCard(BuildContext context, CountrySummary currentCountry) {
   return ListTile(
     leading: SizedBox(
       width: 100,
       height: 80,
       child: Hero(
-        tag: currentCountry.commonName,
+        tag: currentCountry.name,
         child: ClipRRect(
           borderRadius: BorderRadiusGeometry.circular(9),
-          child: Image.network(currentCountry.flagPng, fit: BoxFit.cover),
+          child: Image.network(currentCountry.flag, fit: BoxFit.cover),
         ),
       ),
     ),
     title: Text(
-      currentCountry.commonName,
+      currentCountry.name,
       style: TextStyle(fontWeight: FontWeight.w500),
     ),
     subtitle: Text(
@@ -39,10 +39,9 @@ Widget homeCountryCard(BuildContext context, Country currentCountry) {
           onPressed: () {
             context.read<FavoritesCubit>().toggleFavorite(
               CountryHiveModel(
-                cca2: currentCountry.cca2!,
-                commonName: currentCountry.commonName,
-                flagPng: currentCountry.flagPng,
-                capital: currentCountry.capital?[0] ?? 'Not Added',
+                cca2: currentCountry.cca2,
+                commonName: currentCountry.name,
+                flagPng: currentCountry.flag,
               ),
             );
           },
@@ -51,10 +50,7 @@ Widget homeCountryCard(BuildContext context, Country currentCountry) {
     ),
     onTap: () => context.pushNamed(
       'countryPage',
-      extra: CountryPage(
-        name: currentCountry.commonName,
-        cca2: currentCountry.cca2!,
-      ),
+      extra: CountryPage(name: currentCountry.name, cca2: currentCountry.cca2),
     ),
   );
 }

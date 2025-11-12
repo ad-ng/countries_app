@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
         } else {
           context.read<CountryCubit>().searchCountries(query);
         }
-        setState(() {}); // Rebuild AnimatedSwitcher
+        setState(() {});
       });
     });
   }

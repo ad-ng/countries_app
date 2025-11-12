@@ -1,36 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'country_model.dart';
+part of 'country_summary_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CountryModelImpl _$$CountryModelImplFromJson(Map<String, dynamic> json) =>
-    _$CountryModelImpl(
+_$CountrySummaryModelImpl _$$CountrySummaryModelImplFromJson(
+        Map<String, dynamic> json) =>
+    _$CountrySummaryModelImpl(
       name: Name.fromJson(json['name'] as Map<String, dynamic>),
       flags: Flags.fromJson(json['flags'] as Map<String, dynamic>),
-      capital:
-          (json['capital'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      region: json['region'] as String?,
-      subregion: json['subregion'] as String?,
-      area: (json['area'] as num?)?.toDouble(),
-      timezones: (json['timezones'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
       cca2: json['cca2'] as String?,
       population: (json['population'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$CountryModelImplToJson(_$CountryModelImpl instance) =>
+Map<String, dynamic> _$$CountrySummaryModelImplToJson(
+        _$CountrySummaryModelImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'flags': instance.flags,
-      'capital': instance.capital,
-      'region': instance.region,
-      'subregion': instance.subregion,
-      'area': instance.area,
-      'timezones': instance.timezones,
       'cca2': instance.cca2,
       'population': instance.population,
     };

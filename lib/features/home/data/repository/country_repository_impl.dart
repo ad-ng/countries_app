@@ -1,6 +1,8 @@
 import 'package:countries_app/features/home/data/datasources/remote/country_api_service.dart';
-import 'package:countries_app/features/home/data/models/country_model.dart';
-import 'package:countries_app/features/home/domain/entity/country.dart';
+import 'package:countries_app/features/home/data/models/country_details_model.dart';
+import 'package:countries_app/features/home/data/models/country_summary_model.dart';
+import 'package:countries_app/features/home/domain/entity/country_details.dart';
+import 'package:countries_app/features/home/domain/entity/country_summary.dart';
 import 'package:countries_app/features/home/domain/repository/country_repository.dart';
 
 class CountryRepositoryImpl implements CountryRepository {
@@ -9,19 +11,19 @@ class CountryRepositoryImpl implements CountryRepository {
   CountryRepositoryImpl(this.countryApiService);
 
   @override
-  Future<List<Country>> getAllCountries() async {
+  Future<List<CountrySummary>> getAllCountries() async {
     final models = await countryApiService.fetchAllCountries();
     return models.map((m) => m.toEntity()).toList();
   }
 
   @override
-  Future<List<Country>> searchCountries(searchQuery) async {
+  Future<List<CountrySummary>> searchCountries(searchQuery) async {
     final models = await countryApiService.searchCountries(searchQuery);
     return models.map((m) => m.toEntity()).toList();
   }
 
   @override
-  Future<Country> fetchOneCountryByCca2(String cca2) async {
+  Future<CountryDetails> fetchOneCountryByCca2(String cca2) async {
     final models = await countryApiService.fetchOneCountryByCca2(cca2);
     return models.toEntity();
   }

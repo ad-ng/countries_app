@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:countries_app/features/home/domain/entity/country.dart';
+import 'package:countries_app/features/home/domain/entity/country_summary.dart';
 import 'package:countries_app/features/home/domain/usecases/search_countries_by_name.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
