@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:countries_app/features/favorites/data/models/country_hive_model.dart';
 import 'package:countries_app/features/favorites/presentation/cubit/favorites_cubit.dart';
 import 'package:countries_app/features/home/domain/entity/country_summary.dart';
@@ -21,7 +22,14 @@ Widget homeCountryCard(BuildContext context, CountrySummary currentCountry) {
           tag: currentCountry.name,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(9),
-            child: Image.network(currentCountry.flag, fit: BoxFit.cover),
+            child: CachedNetworkImage(
+              imageUrl: currentCountry.flag,
+              fit: BoxFit.cover,
+              placeholder: (context, url) => const Center(
+                child: CircularProgressIndicator(strokeWidth: 2),
+              ),
+              errorWidget: (context, url, error) => const Icon(Icons.flag),
+            ),
           ),
         ),
       ),

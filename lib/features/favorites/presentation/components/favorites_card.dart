@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:countries_app/features/favorites/data/models/country_hive_model.dart';
 import 'package:countries_app/features/favorites/presentation/cubit/favorites_cubit.dart';
 import 'package:countries_app/features/home/presentation/pages/country_page.dart';
@@ -11,10 +12,16 @@ Widget favoritesCard(BuildContext context, CountryHiveModel currentCountry) {
       width: 100,
       height: 80,
       child: Hero(
-        tag: currentCountry.commonName,
+        tag: currentCountry.flagPng,
         child: ClipRRect(
-          borderRadius: BorderRadiusGeometry.circular(9),
-          child: Image.network(currentCountry.flagPng, fit: BoxFit.cover),
+          borderRadius: BorderRadius.circular(9),
+          child: CachedNetworkImage(
+            imageUrl: currentCountry.flagPng,
+            fit: BoxFit.cover,
+            placeholder: (context, url) =>
+                const Center(child: CircularProgressIndicator(strokeWidth: 2)),
+            errorWidget: (context, url, error) => const Icon(Icons.flag),
+          ),
         ),
       ),
     ),
