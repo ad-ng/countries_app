@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:countries_app/features/favorites/data/models/country_hive_model.dart';
 import 'package:countries_app/features/favorites/presentation/cubit/favorites_cubit.dart';
 import 'package:countries_app/features/home/domain/entity/country_summary.dart';
-import 'package:countries_app/features/home/domain/usecases/number_formatter.dart';
+import 'package:countries_app/features/home/utils/number_formatter.dart';
 import 'package:countries_app/features/home/presentation/bloc/country_cubit.dart';
 import 'package:countries_app/features/home/presentation/pages/country_page.dart';
 import 'package:flutter/material.dart';
