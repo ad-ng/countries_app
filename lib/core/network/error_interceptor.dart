@@ -1,4 +1,4 @@
-import 'package:countries_app/core/error_model.dart';
+import 'package:countries_app/core/network/error_model.dart';
 import 'package:dio/dio.dart';
 
 /// An interceptor to handle all Dio errors and normalize them into [ErrorModel].

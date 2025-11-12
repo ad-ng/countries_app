@@ -1,4 +1,4 @@
-import 'package:countries_app/core/error_interceptor.dart';
+import 'package:countries_app/core/network/error_interceptor.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
