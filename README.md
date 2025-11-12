@@ -24,7 +24,7 @@ A Flutter application that displays country data with offline support using Hive
 <table>
   <tr>
     <td><img src='/lib/assets/country_page_light.png' alt="Country Details Light Mode" width="300"/></td>
-    <td><img src='./lib/assets/country_page_light.png' alt="Country Details Dark Mode" width="300"/></td>
+    <td><img src='./lib/assets/country_page_dark.png' alt="Country Details Dark Mode" width="300"/></td>
   </tr>
 </table>
 
