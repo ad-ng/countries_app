@@ -5,6 +5,7 @@ import 'package:countries_app/features/favorites/presentation/cubit/favorites_cu
 import 'package:countries_app/features/favorites/presentation/page/favorite_page.dart';
 import 'package:countries_app/features/home/data/datasources/remote/country_api_service.dart';
 import 'package:countries_app/features/favorites/data/models/country_hive_model.dart';
+import 'package:countries_app/features/home/data/models/country_summary_hive_model.dart';
 import 'package:countries_app/features/home/data/repository/country_repository_impl.dart';
 import 'package:countries_app/features/home/domain/usecases/get_all_countries.dart';
 import 'package:countries_app/features/home/domain/usecases/get_one_country.dart';
@@ -29,8 +30,10 @@ void main() async {
   await Hive.initFlutter();
 
   Hive.registerAdapter(CountryHiveModelAdapter());
+  Hive.registerAdapter(CountrySummaryHiveModelAdapter());
 
   await Hive.openBox<CountryHiveModel>('favorites');
+  await Hive.openBox<CountryHiveModel>('local_countries');
 
   runApp(const MyApp());
 }
