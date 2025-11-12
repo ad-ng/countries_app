@@ -3,6 +3,7 @@ import 'package:countries_app/features/favorites/data/datasource/local/favorite_
 import 'package:countries_app/features/favorites/data/repository/favorite_repository_impl.dart';
 import 'package:countries_app/features/favorites/presentation/cubit/favorites_cubit.dart';
 import 'package:countries_app/features/favorites/presentation/page/favorite_page.dart';
+import 'package:countries_app/features/home/data/datasources/local/country_hive_service.dart';
 import 'package:countries_app/features/home/data/datasources/remote/country_api_service.dart';
 import 'package:countries_app/features/favorites/data/models/country_hive_model.dart';
 import 'package:countries_app/features/home/data/models/country_summary_hive_model.dart';
@@ -33,7 +34,7 @@ void main() async {
   Hive.registerAdapter(CountrySummaryHiveModelAdapter());
 
   await Hive.openBox<CountryHiveModel>('favorites');
-  await Hive.openBox<CountryHiveModel>('local_countries');
+  await Hive.openBox<CountrySummaryHiveModel>('local_countries');
 
   runApp(const MyApp());
 }
@@ -44,7 +45,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final countryRepo = CountryRepositoryImpl(CountryApiService());
+    final countryRepo = CountryRepositoryImpl(
+      CountryApiService(),
+      CountryHiveService(),
+    );
 
     return MultiBlocProvider(
       providers: [

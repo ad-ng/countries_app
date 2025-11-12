@@ -1,7 +1,5 @@
 import 'package:countries_app/core/dio_service.dart';
-import 'package:countries_app/features/home/data/datasources/local/country_hive_service.dart';
 import 'package:countries_app/features/home/data/models/country_details_model.dart';
-import 'package:countries_app/features/home/data/models/country_summary_hive_model.dart';
 import 'package:countries_app/features/home/data/models/country_summary_model.dart';
 import 'package:dio/dio.dart';
 
@@ -23,14 +21,6 @@ class CountryApiService {
                   CountrySummaryModel.fromJson(json as Map<String, dynamic>),
             )
             .toList();
-
-        // Convert to Hive models
-        final hiveModels = countries
-            .map((e) => CountrySummaryHiveModel.fromEntity(e.toEntity()))
-            .toList();
-
-        // Save to Hive
-        await CountryHiveService().saveCountries(hiveModels);
 
         return countries;
       } else {

@@ -10,4 +10,8 @@ class CountryHiveService {
     await box.clear();
     await box.addAll(countries);
   }
+
+  List<CountrySummaryHiveModel> getCountries() {
+    return box.values.toList();
+  }
 }

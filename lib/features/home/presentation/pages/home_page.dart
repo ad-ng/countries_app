@@ -99,8 +99,7 @@ class _HomePageState extends State<HomePage> {
                     );
                   },
 
-                  error: (msg) =>
-                      const Center(child: Text('No countries found.')),
+                  error: (msg) => Center(child: Text(msg)),
                 );
               },
             ),
