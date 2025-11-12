@@ -2,6 +2,7 @@ import 'package:countries_app/features/home/domain/usecases/number_formatter.dar
 import 'package:countries_app/features/home/presentation/bloc/single_country_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 
 class CountryPage extends StatefulWidget {
@@ -25,13 +26,24 @@ class _CountryPageState extends State<CountryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () => context.pop(),
+          icon: Icon(
+            Icons.arrow_back_sharp,
+            color: Theme.of(context).colorScheme.secondary,
+          ),
+        ),
         title: Text(
           widget.name,
-          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 19),
+          style: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: 19,
+            color: Theme.of(context).colorScheme.secondary,
+          ),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: SingleChildScrollView(
         child: BlocBuilder<SingleCountryCubit, SingleCountryState>(
@@ -63,6 +75,7 @@ class _CountryPageState extends State<CountryPage> {
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
+                        color: Theme.of(context).colorScheme.secondary,
                       ),
                     ),
                   ),
@@ -89,6 +102,7 @@ class _CountryPageState extends State<CountryPage> {
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
+                        color: Theme.of(context).colorScheme.secondary,
                       ),
                     ),
                   ),
@@ -112,6 +126,9 @@ class _CountryPageState extends State<CountryPage> {
                                 style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
+                                  color: Theme.of(
+                                    context,
+                                  ).colorScheme.secondary,
                                 ),
                               ),
                             ),
@@ -128,7 +145,12 @@ class _CountryPageState extends State<CountryPage> {
                     onPressed: () => context
                         .read<SingleCountryCubit>()
                         .fetchOneCountry(widget.cca2),
-                    child: Text('Retry'),
+                    child: Text(
+                      'Retry',
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.secondary,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -147,6 +169,12 @@ Widget eachStatistic(BuildContext context, String title, String value) {
       title,
       style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w400),
     ),
-    trailing: Text(value, style: TextStyle(fontSize: 15)),
+    trailing: Text(
+      value,
+      style: TextStyle(
+        fontSize: 15,
+        color: Theme.of(context).colorScheme.secondary,
+      ),
+    ),
   );
 }

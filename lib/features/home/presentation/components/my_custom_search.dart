@@ -34,7 +34,7 @@ class _MyCustomSearchState extends State<MyCustomSearch> {
         height: 50,
         child: TextField(
           cursorColor: Colors.black,
-          style: TextStyle(fontSize: 18),
+          style: TextStyle(fontSize: 18, color: Colors.black),
           controller: widget.searchQuery,
           decoration: InputDecoration(
             filled: true,
@@ -47,7 +47,7 @@ class _MyCustomSearchState extends State<MyCustomSearch> {
               borderRadius: BorderRadius.circular(15),
               borderSide: BorderSide(color: Colors.transparent),
             ),
-            prefixIcon: Icon(Icons.search, size: 30),
+            prefixIcon: Icon(Icons.search, size: 30, color: Colors.black),
             hintText: 'Search for a country',
             hintStyle: TextStyle(fontSize: 18, color: Colors.black38),
             isDense: true,
@@ -56,7 +56,10 @@ class _MyCustomSearchState extends State<MyCustomSearch> {
                     onPressed: () {
                       widget.searchQuery.clear();
                     },
-                    icon: Icon(Icons.cancel),
+                    icon: Icon(
+                      Icons.cancel,
+                      color:Colors.black
+                    ),
                   )
                 : null,
           ),

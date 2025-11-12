@@ -27,7 +27,10 @@ Widget favoritesCard(BuildContext context, CountryHiveModel currentCountry) {
     ),
     title: Text(
       currentCountry.commonName,
-      style: TextStyle(fontWeight: FontWeight.w500),
+      style: TextStyle(
+        fontWeight: FontWeight.w500,
+        color: Theme.of(context).colorScheme.secondary,
+      ),
     ),
     subtitle: Text(
       'Capital: ${currentCountry.capital}',

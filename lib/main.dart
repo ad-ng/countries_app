@@ -1,4 +1,5 @@
 import 'package:countries_app/core/dio_service.dart';
+import 'package:countries_app/core/theme/theme_cubit.dart';
 import 'package:countries_app/features/favorites/data/datasource/local/favorite_local_service.dart';
 import 'package:countries_app/features/favorites/data/repository/favorite_repository_impl.dart';
 import 'package:countries_app/features/favorites/presentation/cubit/favorites_cubit.dart';
@@ -66,12 +67,37 @@ class MyApp extends StatelessWidget {
           create: (context) =>
               FavoritesCubit(FavoriteRepositoryImpl(FavoriteLocalService())),
         ),
+        BlocProvider(create: (context) => ThemeCubit()),
       ],
-      child: MaterialApp.router(
-        title: 'Countries App',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.black)),
-        routerConfig: routes,
+      child: BlocBuilder<ThemeCubit, ThemeMode>(
+        builder: (context, themeMode) {
+          return MaterialApp.router(
+            title: 'Countries App',
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              colorScheme: ColorScheme.fromSeed(
+                seedColor: Colors.blue,
+                primary: Colors.black,
+                secondary: Colors.white,
+                background: Colors.white,
+                brightness: Brightness.light,
+              ),
+              useMaterial3: true,
+            ),
+            darkTheme: ThemeData(
+              colorScheme: ColorScheme.fromSeed(
+                seedColor: Colors.blue,
+                primary: Colors.white,
+                secondary: Colors.black,
+                background: Colors.black,
+                brightness: Brightness.dark,
+              ),
+              useMaterial3: true,
+            ),
+            themeMode: themeMode,
+            routerConfig: routes,
+          );
+        },
       ),
     );
   }

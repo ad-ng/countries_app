@@ -17,7 +17,10 @@ Widget searchCountryCard(BuildContext context, CountrySummary currentCountry) {
       ),
       title: Text(
         currentCountry.name,
-        style: TextStyle(fontWeight: FontWeight.w500),
+        style: TextStyle(
+          fontWeight: FontWeight.w500,
+          color: Theme.of(context).colorScheme.secondary,
+        ),
       ),
       onTap: () => context.pushNamed(
         'countryPage',

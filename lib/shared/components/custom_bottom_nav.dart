@@ -3,9 +3,9 @@ import 'package:go_router/go_router.dart';
 
 Widget customBottomNav(BuildContext context, int currentIndex) {
   return BottomNavigationBar(
-    backgroundColor: Colors.white,
+    backgroundColor: Theme.of(context).colorScheme.primary,
     currentIndex: currentIndex,
-    selectedItemColor: Colors.black,
+    selectedItemColor: Theme.of(context).colorScheme.secondary,
     unselectedItemColor: Colors.grey,
     onTap: (value) {
       value == 0 ? context.goNamed('/') : context.goNamed('favorite');

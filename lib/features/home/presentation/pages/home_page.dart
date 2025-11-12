@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:countries_app/core/theme/theme_cubit.dart';
 import 'package:countries_app/features/home/presentation/bloc/country_cubit.dart';
 import 'package:countries_app/features/home/presentation/components/home_country_card.dart';
 import 'package:countries_app/features/home/presentation/components/my_custom_search.dart';
@@ -54,14 +55,35 @@ class _HomePageState extends State<HomePage> {
     final isSearching = searchQuery.text.isNotEmpty;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Countries',
-          style: TextStyle(fontWeight: FontWeight.w500),
+          style: TextStyle(
+            fontWeight: FontWeight.w500,
+            color: Theme.of(context).colorScheme.secondary,
+          ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        actions: [
+          BlocBuilder<ThemeCubit, ThemeMode>(
+            builder: (context, themeMode) {
+              return IconButton(
+                icon: Icon(
+                  themeMode == ThemeMode.light
+                      ? Icons.dark_mode
+                      : Icons.light_mode,
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
+                onPressed: () {
+                  context.read<ThemeCubit>().toggleTheme();
+                },
+              );
+            },
+          ),
+          SizedBox(width: 10),
+        ],
       ),
       body: Column(
         children: [

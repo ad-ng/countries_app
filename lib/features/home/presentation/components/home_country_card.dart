@@ -35,7 +35,10 @@ Widget homeCountryCard(BuildContext context, CountrySummary currentCountry) {
       ),
       title: Text(
         currentCountry.name,
-        style: TextStyle(fontWeight: FontWeight.w500),
+        style: TextStyle(
+          fontWeight: FontWeight.w500,
+          color: Theme.of(context).colorScheme.secondary,
+        ),
       ),
       subtitle: Text(
         'Population: ${customNumberFormat(currentCountry.population)} ',
@@ -47,7 +50,7 @@ Widget homeCountryCard(BuildContext context, CountrySummary currentCountry) {
           return IconButton(
             icon: Icon(
               isFav ? Icons.favorite : Icons.favorite_border,
-              color: Colors.black,
+              color: Theme.of(context).colorScheme.secondary,
             ),
             onPressed: () {
               context.read<FavoritesCubit>().toggleFavorite(
